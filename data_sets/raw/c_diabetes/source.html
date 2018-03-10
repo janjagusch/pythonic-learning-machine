@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UCI Machine Learning Repository: Pima Indians Diabetes Data Set</title>
+
+<!-- Stylesheet link -->
+<link rel="stylesheet" type="text/css" href="./source_files/ml.css">
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function checkform ( form )
+{
+  // see http://www.thesitewizard.com/archive/validation.shtml
+  // for an explanation of this script and how to use it on your
+  // own website
+
+  // ** START **
+  if (form.q.value == "")
+  {
+    alert( "Please enter search terms." );
+    form.q.focus();
+    return false ;
+  }
+
+  if (getCheckedValue(form.sitesearch) == "ics.uci.edu" && form.q.value.indexOf("site:archive.ics.uci.edu/ml") == -1)
+  {
+    form.q.value = form.q.value + " site:archive.ics.uci.edu/ml";
+  }
+
+  // ** END **
+  return true ;
+}
+
+// return the value of the radio button that is checked
+// return an empty string if none are checked, or
+// there are no radio buttons
+function getCheckedValue(radioObj) {
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+//-->
+</script>
+
+</head>
+
+<body>
+
+
+<!-- SITE HEADER (INCLUDES LOGO AND SEARCH BOX) -->
+
+<table width="100%" bgcolor="#003366">
+<tbody><tr>
+	<td>
+		<span class="normal"><a href="http://archive.ics.uci.edu/ml/index.html" alt="Home"><img src="./source_files/logo.gif" border="0"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://cml.ics.uci.edu/"><font color="FFDD33">Center for Machine Learning and Intelligent Systems</font></a></span>
+	</td>
+	<td width="100%" valign="top" align="right">
+		<span class="whitetext">
+		<a href="http://archive.ics.uci.edu/ml/about.html">About</a>&nbsp;
+		<a href="http://archive.ics.uci.edu/ml/citation_policy.html">Citation Policy</a>&nbsp;
+		<a href="http://archive.ics.uci.edu/ml/donation_policy.html">Donate a Data Set</a>&nbsp;
+		<a href="http://archive.ics.uci.edu/ml/contact.html">Contact</a>
+		</span>
+
+		<br>
+		<br>
+		<!-- Search Google -->
+
+		<form method="GET" action="http://www.google.com/custom" onsubmit="return checkform(this);">
+		<input type="text" name="q" size="30" maxlength="255" value="">
+		<input type="submit" name="sa" value="Search">
+		<input type="hidden" name="cof" value="AH:center;LH:130;L:http://archive.ics.uci.edu/assets/logo.gif;LW:384;AWFID:869c0b2eaa8d518e;">
+		<input type="hidden" name="domains" value="ics.uci.edu">
+		<br>
+		<input type="radio" name="sitesearch" value="ics.uci.edu" checked=""> <span class="whitetext"><font size="1">Repository</font></span>
+		<input type="radio" name="sitesearch" value=""> <span class="whitetext"><font size="1">Web</font></span>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="http://www.google.com/search"><img src="./source_files/Logo_25blk.gif" border="0" alt="Google" align="middle" height="27"></a>
+		<br>
+		</form>
+		<!-- Search Google -->
+
+
+		<span class="whitetext"><a href="http://archive.ics.uci.edu/ml/datasets.html"><font size="3" color="#FFDD33"><b>View 
+ALL Data Sets</b></font></a></span>
+		<br>
+	</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<table width="100%" border="0" cellpadding="2"><tbody><tr><td>
+
+   <table><tbody><tr>
+     <td valign="top">
+	<p>
+	<span class="heading"><b>Pima Indians Diabetes Data Set</b></span>
+	<br><span class="normal"><i><font size="4">Download</font></i>: <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/"><font style="BACKGROUND-COLOR: #FFFFAA" size="4">Data Folder</font></a>, <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.names"><font style="BACKGROUND-COLOR: #FFFFAA" size="4">Data Set Description</font></a></span></p>
+
+	<p class="normal"><b>Abstract</b>: From National Institute of Diabetes and Digestive and Kidney Diseases; Includes cost data (donated by Peter Turney)</p>
+     </td>
+     <td> </td>
+   </tr></tbody></table>
+
+<table border="1" cellpadding="6">
+	<tbody><tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Data Set Characteristics:&nbsp;&nbsp;</b></p></td>
+		<td><p class="normal">Multivariate</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Instances:</b></p></td>
+		<td><p class="normal">768</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Area:</b></p></td>
+		<td><p class="normal">Life</p></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Attribute Characteristics:</b></p></td>
+		<td><p class="normal">Integer, Real</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Attributes:</b></p></td>
+		<td><p class="normal">8</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Date Donated</b></p></td>
+		<td><p class="normal">1990-05-09</p></td>
+	</tr>
+	<tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Associated Tasks:</b></p></td>
+		<td><p class="normal">Classification</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Missing Values?</b></p></td>
+		<td><p class="normal">Yes</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Web Hits:</b></p></td>
+		<td><p class="normal">346938</p></td>
+	</tr>
+	<!--
+	<tr>
+		
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Highest Percentage Achieved:&nbsp;&nbsp;</b></p></td>
+		<td><p class="normal">N/A</p></td>
+	</tr>
+	-->
+</tbody></table>
+
+
+<br>
+
+<p class="small-heading"><b>Source:</b></p>
+<p class="normal">Original Owners: 
+<br>
+<br>National Institute of Diabetes and Digestive and Kidney Diseases
+<br>
+<br>Donor of database: 
+<br>
+<br>Vincent Sigillito (<u>vgs <b>'@'</b> aplcen.apl.jhu.edu</u>)
+<br>Research Center, RMI Group Leader
+<br>Applied Physics Laboratory
+<br>The Johns Hopkins University
+<br>Johns Hopkins Road
+<br>Laurel, MD 20707
+<br>(301) 953-6231</p>
+
+<br>
+
+<p class="small-heading"><b>Data Set Information:</b></p>
+<p class="normal">Several constraints were placed on the selection of these instances from a larger database.  In particular, all patients here are females at least 21 years old of Pima Indian heritage.  ADAP is an adaptive learning routine that generates and executes digital analogs of perceptron-like devices.  It is a unique algorithm; see the paper for details.</p>
+
+<br>
+
+<p class="small-heading"><b>Attribute Information:</b></p>
+<p class="normal">   1. Number of times pregnant
+<br>   2. Plasma glucose concentration a 2 hours in an oral glucose tolerance test
+<br>   3. Diastolic blood pressure (mm Hg)
+<br>   4. Triceps skin fold thickness (mm)
+<br>   5. 2-Hour serum insulin (mu U/ml)
+<br>   6. Body mass index (weight in kg/(height in m)^2)
+<br>   7. Diabetes pedigree function
+<br>   8. Age (years)
+<br>   9. Class variable (0 or 1)
+<br>
+<br>** <b>UPDATE:</b> Until 02/28/2011 this web page indicated that there were no missing values in the dataset. As pointed out by a repository user, this cannot be true: there are zeros in places where they are biologically impossible, such as the blood pressure attribute.  It seems very likely that zero values encode missing data.  However, since the dataset donors made no such statement we encourage you to use your best judgement and state your assumptions.</p>
+
+<br>
+
+<p class="small-heading"><b>Relevant Papers:</b></p>
+<p class="normal">Smith, J.W., Everhart, J.E., Dickson, W.C., Knowler, W.C., &amp; Johannes, R.S. (1988). Using the ADAP learning algorithm to forecast the onset of diabetes mellitus.  In Proceedings of the Symposium on Computer Applications and Medical Care} (pp. 261--265).  IEEE Computer Society Press.
+<br><a href="http://rexa.info/paper/04587c10a7c92baa01948f71f2513d5928fe8e81">[Web Link]</a>
+<br></p>
+
+<br>
+
+
+<!-- OLD CODE:
+
+<p class="small-heading"><b>Papers That Cite This Data Set<sup>1</sup>:</b></p>
+<img src="../assets/rexa.jpg" />
+<p class="normal">Jeroen Eggermont and Joost N. Kok and Walter A. Kosters. <a 
+href="http://rexa.info/paper/d64d2705cabed449e8cb2ecc3c3c77c54ee71051">Genetic Programming for data classification: partitioning the search space</a>. SAC. 2004.  [<a 
+href="../support/Pima+Indians+Diabetes#d64d2705cabed449e8cb2ecc3c3c77c54ee71051">View Context</a>].<br><br>Eibe Frank and Mark Hall. <a 
+href="http://rexa.info/paper/bf8052c51e6338fa2ab5479c08d657a06e4dbd4a">Visualizing Class Probability Estimators</a>. PKDD. 2003.  [<a 
+href="../support/Pima+Indians+Diabetes#bf8052c51e6338fa2ab5479c08d657a06e4dbd4a">View Context</a>].<br><br>Michael L. Raymer and Travis E. Doom and Leslie A. Kuhn and William F. Punch. <a 
+href="http://rexa.info/paper/076c5b4e7bf69148bcde8c83621ecf1140a7d55c">Knowledge discovery in medical and biological datasets using a hybrid Bayes classifier/evolutionary algorithm</a>. IEEE Transactions on Systems, Man, and Cybernetics, Part B, 33. 2003.  [<a 
+href="../support/Pima+Indians+Diabetes#076c5b4e7bf69148bcde8c83621ecf1140a7d55c">View Context</a>].<br><br>Peter Sykacek and Stephen J. Roberts. <a 
+href="http://rexa.info/paper/d328ae33fb50756832a1c6cd703f7176c361923f">Adaptive Classification by Variational Kalman Filtering</a>. NIPS. 2002.  [<a 
+href="../support/Pima+Indians+Diabetes#d328ae33fb50756832a1c6cd703f7176c361923f">View Context</a>].<br><br>Marina Skurichina and Ludmila Kuncheva and Robert P W Duin. <a 
+href="http://rexa.info/paper/d8bc3a2d334e33553c2c7e052ce8c2fd9ae5718b">Bagging and Boosting for the Nearest Mean Classifier: Effects of Sample Size on Diversity and Accuracy</a>. Multiple Classifier Systems. 2002.  [<a 
+href="../support/Pima+Indians+Diabetes#d8bc3a2d334e33553c2c7e052ce8c2fd9ae5718b">View Context</a>].<br><br>Ilya Blayvas and Ron Kimmel. <a 
+href="http://rexa.info/paper/ded3146242d6b322f31afbf57a8afde22e4ec8e1">Multiresolution Approximation for Classification</a>. CS Dept. Technion. 2002.  [<a 
+href="../support/Pima+Indians+Diabetes#ded3146242d6b322f31afbf57a8afde22e4ec8e1">View Context</a>].<br><br>Tao Jiang and Art B. Owen. <a 
+href="http://rexa.info/paper/da335006c9ae6a44b5b680d00b15c00c0e22e0de">Quasi-regression for visualization and interpretation of black box functions</a>. Department of Statistics Stanford University. 2002.  [<a 
+href="../support/Pima+Indians+Diabetes#da335006c9ae6a44b5b680d00b15c00c0e22e0de">View Context</a>].<br><br>Jochen Garcke and Michael Griebel and Michael Thess. <a 
+href="http://rexa.info/paper/4018f616747e1e9c96771daa20bca34c484b966a">Data Mining with Sparse Grids</a>. Computing, 67. 2001.  [<a 
+href="../support/Pima+Indians+Diabetes#4018f616747e1e9c96771daa20bca34c484b966a">View Context</a>].<br><br>Robert Burbidge and Matthew Trotter and Bernard F. Buxton and Sean B. Holden. <a 
+href="http://rexa.info/paper/c185d513badef2336ca48f64098d4b5df17bf5a4">STAR - Sparsity through Automated Rejection</a>. IWANN (1). 2001.  [<a 
+href="../support/Pima+Indians+Diabetes#c185d513badef2336ca48f64098d4b5df17bf5a4">View Context</a>].<br><br>Simon Tong and Daphne Koller. <a 
+href="http://rexa.info/paper/989443f4feec00743b3521c1b450717f6013de20">Restricted Bayes Optimal Classifiers</a>. AAAI/IAAI. 2000.  [<a 
+href="../support/Pima+Indians+Diabetes#989443f4feec00743b3521c1b450717f6013de20">View Context</a>].<br><br>Stavros J. Perantonis and Vassilis Virvilis. <a 
+href="http://rexa.info/paper/dc4f2babc5ca4534b435280aec32f5816ddb53b0">Input Feature Extraction for Multilayered Perceptrons Using Supervised Principal Component Analysis</a>. Neural Processing Letters, 10. 1999.  [<a 
+href="../support/Pima+Indians+Diabetes#dc4f2babc5ca4534b435280aec32f5816ddb53b0">View Context</a>].<br><br>Huan Liu and Rudy Setiono. <a 
+href="http://rexa.info/paper/96246754b7958de8a635165e8b145c264240cd3d">Feature Transformation and Multivariate Decision Tree Induction</a>. Discovery Science. 1998.  [<a 
+href="../support/Pima+Indians+Diabetes#96246754b7958de8a635165e8b145c264240cd3d">View Context</a>].<br><br>Thomas G. Dietterich. <a 
+href="http://rexa.info/paper/5f8eb537fc397ad5e506b2eae4f6676b48990ba6">Approximate Statistical Test For Comparing Supervised Classification Learning Algorithms</a>. Neural Computation, 10. 1998.  [<a 
+href="../support/Pima+Indians+Diabetes#5f8eb537fc397ad5e506b2eae4f6676b48990ba6">View Context</a>].<br><br>Kristin P. Bennett and Erin J. Bredensteiner. <a 
+href="http://rexa.info/paper/63ebbe51c9c4dea76320f7b6a40f2a59f10cc7c0">A Parametric Optimization Method for Machine Learning</a>. INFORMS Journal on Computing, 9. 1997.  [<a 
+href="../support/Pima+Indians+Diabetes#63ebbe51c9c4dea76320f7b6a40f2a59f10cc7c0">View Context</a>].<br><br>Jennifer A. Blue and Kristin P. Bennett. <a 
+href="http://rexa.info/paper/19e1b6e0932bbe665a2c4a069a0636d8d5cf0c6f">Hybrid Extreme Point Tabu Search</a>. Department of Mathematical Sciences Rensselaer Polytechnic Institute. 1996.  [<a 
+href="../support/Pima+Indians+Diabetes#19e1b6e0932bbe665a2c4a069a0636d8d5cf0c6f">View Context</a>].<br><br>Peter D. Turney. <a 
+href="http://rexa.info/paper/f6f302674e1188614eaa6f23c782d8d1c0ea2320">Cost-Sensitive Classification: Empirical Evaluation of a Hybrid Genetic Decision Tree Induction Algorithm</a>. CoRR, csAI/9503102. 1995.  [<a 
+href="../support/Pima+Indians+Diabetes#f6f302674e1188614eaa6f23c782d8d1c0ea2320">View Context</a>].<br><br>Ilya Blayvas and Ron Kimmel. <a 
+href="http://rexa.info/paper/5a08d3d508c193c4964f1f3f66bdcb78b98a905b">INVITED PAPER Special Issue on Multiresolution Analysis Machine Learning via Multiresolution Approximation</a>.  [<a 
+href="../support/Pima+Indians+Diabetes#5a08d3d508c193c4964f1f3f66bdcb78b98a905b">View Context</a>].<br><br>Andrew Watkins and Jon Timmis and Lois C. Boggess. <a 
+href="http://rexa.info/paper/b4b7ea88c807c5c8746bf3067f13b1d07899bcc9">Artificial Immune Recognition System (AIRS): An ImmuneInspired Supervised Learning Algorithm</a>. (abw5,jt6@kent.ac.uk) Computing Laboratory, University of Kent.  [<a 
+href="../support/Pima+Indians+Diabetes#b4b7ea88c807c5c8746bf3067f13b1d07899bcc9">View Context</a>].<br><br>Ilya Blayvas and Ron Kimmel. <a 
+href="http://rexa.info/paper/87afa910f706df9e28bfa697d6d2eea7c0cb53ef">Efficient Classification via Multiresolution Training Set Approximation</a>. CS Dept. Technion.  [<a 
+href="../support/Pima+Indians+Diabetes#87afa910f706df9e28bfa697d6d2eea7c0cb53ef">View Context</a>].<br><br>Matthias Scherf and W. Brauer. <a 
+href="http://rexa.info/paper/19d5e6db33eb1a6c31be626538ea656f79e901b1">Feature Selection by Means of a Feature Weighting Approach</a>. GSF - National Research Center for Environment and Health.  [<a 
+href="../support/Pima+Indians+Diabetes#19d5e6db33eb1a6c31be626538ea656f79e901b1">View Context</a>].<br><br>Rudy Setiono and Huan Liu. <a 
+href="http://rexa.info/paper/9a75a9a8ce786d6a05ad51afa124cd4f70bfbb36">Neural-Network Feature Selector</a>. Department of Information Systems and Computer Science National University of Singapore.  [<a 
+href="../support/Pima+Indians+Diabetes#9a75a9a8ce786d6a05ad51afa124cd4f70bfbb36">View Context</a>].<br><br>Christopher P. Diehl and Gert Cauwenberghs. <a 
+href="http://rexa.info/paper/21ab0b68f14e5f4b1f401fa7bca294c1dc48061b">SVM Incremental Learning, Adaptation and Optimization</a>. Applied Physics Laboratory Johns Hopkins University.  [<a 
+href="../support/Pima+Indians+Diabetes#21ab0b68f14e5f4b1f401fa7bca294c1dc48061b">View Context</a>].<br><br>Wl odzisl/aw Duch and Rudy Setiono and Jacek M. Zurada. <a 
+href="http://rexa.info/paper/8afa6796645ce4b0642db26c822cf6bfa8cc4d0d">Computational intelligence methods for rule-based data understanding</a>.  [<a 
+href="../support/Pima+Indians+Diabetes#8afa6796645ce4b0642db26c822cf6bfa8cc4d0d">View Context</a>].<br><br>Michalis K. Titsias and Aristidis Likas. <a 
+href="http://rexa.info/paper/d26e510dd613f1f7821b5f6c4e9fe5868aa5f006">Shared Kernel Models for Class Conditional Density Estimation</a>.  [<a 
+href="../support/Pima+Indians+Diabetes#d26e510dd613f1f7821b5f6c4e9fe5868aa5f006">View Context</a>].<br><br>Lawrence O. Hall and Nitesh V. Chawla and Kevin W. Bowyer. <a 
+href="http://rexa.info/paper/4773165a9efff672af50f07beb5d38c9afc92f5f">Combining Decision Trees Learned in Parallel</a>. Department of Computer Science and Engineering, ENB 118 University of South Florida.  [<a 
+href="../support/Pima+Indians+Diabetes#4773165a9efff672af50f07beb5d38c9afc92f5f">View Context</a>].<br><br>Charles Campbell and Nello Cristianini. <a 
+href="http://rexa.info/paper/b6e169d69cd67763b95698e8961696fec9ca93bf">Simple Learning Algorithms for Training Support Vector Machines</a>. Dept. of Engineering Mathematics.  [<a 
+href="../support/Pima+Indians+Diabetes#b6e169d69cd67763b95698e8961696fec9ca93bf">View Context</a>].<br><br>Liping Wei and Russ B. Altman. <a 
+href="http://rexa.info/paper/c5ac7c07f095dd7068c3ab10d4e7615b6d1564d5">An Automated System for Generating Comparative Disease Profiles and Making Diagnoses</a>. Section on Medical Informatics Stanford University School of Medicine, MSOB X215.  [<a 
+href="../support/Pima+Indians+Diabetes#c5ac7c07f095dd7068c3ab10d4e7615b6d1564d5">View Context</a>].<br><br>Chotirat Ann and Dimitrios Gunopulos. <a 
+href="http://rexa.info/paper/4695569c53cd581fcc193415a8a94a1f92abf607">Scaling up the Naive Bayesian Classifier: Using Decision Trees for Feature Selection</a>. Computer Science Department University of California.  [<a 
+href="../support/Pima+Indians+Diabetes#4695569c53cd581fcc193415a8a94a1f92abf607">View Context</a>].<br><br>Federico Divina and Elena Marchiori. <a 
+href="http://rexa.info/paper/c5da3959b262c7f9f7d339d5a61d1af0ed0ee805">Knowledge-Based Evolutionary Search for Inductive Concept Learning</a>. Vrije Universiteit of Amsterdam.  [<a 
+href="../support/Pima+Indians+Diabetes#c5da3959b262c7f9f7d339d5a61d1af0ed0ee805">View Context</a>].<br><br>Michael Lindenbaum and Shaul Markovitch and Dmitry Rusakov. <a 
+href="http://rexa.info/paper/9a0080df56f0a8fb004723a7dece29109bc316ce">Selective Sampling Using Random Field Modelling</a>.  [<a 
+href="../support/Pima+Indians+Diabetes#9a0080df56f0a8fb004723a7dece29109bc316ce">View Context</a>].<br><br>Federico Divina and Elena Marchiori. <a 
+href="http://rexa.info/paper/954de642cab661d060a2dbc68d3023ba3a9763e1">Handling Continuous Attributes in an Evolutionary Inductive Learner</a>. Department of Computer Science Vrije Universiteit.  [<a 
+href="../support/Pima+Indians+Diabetes#954de642cab661d060a2dbc68d3023ba3a9763e1">View Context</a>].<br><br></p>
+
+-->
+
+<p class="small-heading"><b>Papers That Cite This Data Set<sup>1</sup>:</b></p>
+<img src="./source_files/rexa.jpg"><p class="normal">Jeroen Eggermont and Joost N. Kok and Walter A. Kosters. <a href="http://rexa.info/paper/d64d2705cabed449e8cb2ecc3c3c77c54ee71051">Genetic Programming for data classification: partitioning the search space</a>. SAC. 2004.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#d64d2705cabed449e8cb2ecc3c3c77c54ee71051">View Context</a>].<br><br>Eibe Frank and Mark Hall. <a href="http://rexa.info/paper/bf8052c51e6338fa2ab5479c08d657a06e4dbd4a">Visualizing Class Probability Estimators</a>. PKDD. 2003.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#bf8052c51e6338fa2ab5479c08d657a06e4dbd4a">View Context</a>].<br><br>Michael L. Raymer and Travis E. Doom and Leslie A. Kuhn and William F. Punch. <a href="http://rexa.info/paper/076c5b4e7bf69148bcde8c83621ecf1140a7d55c">Knowledge discovery in medical and biological datasets using a hybrid Bayes classifier/evolutionary algorithm</a>. IEEE Transactions on Systems, Man, and Cybernetics, Part B, 33. 2003.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#076c5b4e7bf69148bcde8c83621ecf1140a7d55c">View Context</a>].<br><br>Peter Sykacek and Stephen J. Roberts. <a href="http://rexa.info/paper/d328ae33fb50756832a1c6cd703f7176c361923f">Adaptive Classification by Variational Kalman Filtering</a>. NIPS. 2002.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#d328ae33fb50756832a1c6cd703f7176c361923f">View Context</a>].<br><br>Marina Skurichina and Ludmila Kuncheva and Robert P W Duin. <a href="http://rexa.info/paper/d8bc3a2d334e33553c2c7e052ce8c2fd9ae5718b">Bagging and Boosting for the Nearest Mean Classifier: Effects of Sample Size on Diversity and Accuracy</a>. Multiple Classifier Systems. 2002.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#d8bc3a2d334e33553c2c7e052ce8c2fd9ae5718b">View Context</a>].<br><br>Ilya Blayvas and Ron Kimmel. <a href="http://rexa.info/paper/ded3146242d6b322f31afbf57a8afde22e4ec8e1">Multiresolution Approximation for Classification</a>. CS Dept. Technion. 2002.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#ded3146242d6b322f31afbf57a8afde22e4ec8e1">View Context</a>].<br><br>Tao Jiang and Art B. Owen. <a href="http://rexa.info/paper/da335006c9ae6a44b5b680d00b15c00c0e22e0de">Quasi-regression for visualization and interpretation of black box functions</a>. Department of Statistics Stanford University. 2002.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#da335006c9ae6a44b5b680d00b15c00c0e22e0de">View Context</a>].<br><br>Jochen Garcke and Michael Griebel and Michael Thess. <a href="http://rexa.info/paper/4018f616747e1e9c96771daa20bca34c484b966a">Data Mining with Sparse Grids</a>. Computing, 67. 2001.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#4018f616747e1e9c96771daa20bca34c484b966a">View Context</a>].<br><br>Robert Burbidge and Matthew Trotter and Bernard F. Buxton and Sean B. Holden. <a href="http://rexa.info/paper/c185d513badef2336ca48f64098d4b5df17bf5a4">STAR - Sparsity through Automated Rejection</a>. IWANN (1). 2001.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#c185d513badef2336ca48f64098d4b5df17bf5a4">View Context</a>].<br><br>Simon Tong and Daphne Koller. <a href="http://rexa.info/paper/989443f4feec00743b3521c1b450717f6013de20">Restricted Bayes Optimal Classifiers</a>. AAAI/IAAI. 2000.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#989443f4feec00743b3521c1b450717f6013de20">View Context</a>].<br><br>Stavros J. Perantonis and Vassilis Virvilis. <a href="http://rexa.info/paper/dc4f2babc5ca4534b435280aec32f5816ddb53b0">Input Feature Extraction for Multilayered Perceptrons Using Supervised Principal Component Analysis</a>. Neural Processing Letters, 10. 1999.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#dc4f2babc5ca4534b435280aec32f5816ddb53b0">View Context</a>].<br><br>Huan Liu and Rudy Setiono. <a href="http://rexa.info/paper/96246754b7958de8a635165e8b145c264240cd3d">Feature Transformation and Multivariate Decision Tree Induction</a>. Discovery Science. 1998.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#96246754b7958de8a635165e8b145c264240cd3d">View Context</a>].<br><br>Thomas G. Dietterich. <a href="http://rexa.info/paper/5f8eb537fc397ad5e506b2eae4f6676b48990ba6">Approximate Statistical Test For Comparing Supervised Classification Learning Algorithms</a>. Neural Computation, 10. 1998.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#5f8eb537fc397ad5e506b2eae4f6676b48990ba6">View Context</a>].<br><br>Kristin P. Bennett and Erin J. Bredensteiner. <a href="http://rexa.info/paper/63ebbe51c9c4dea76320f7b6a40f2a59f10cc7c0">A Parametric Optimization Method for Machine Learning</a>. INFORMS Journal on Computing, 9. 1997.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#63ebbe51c9c4dea76320f7b6a40f2a59f10cc7c0">View Context</a>].<br><br>Jennifer A. Blue and Kristin P. Bennett. <a href="http://rexa.info/paper/19e1b6e0932bbe665a2c4a069a0636d8d5cf0c6f">Hybrid Extreme Point Tabu Search</a>. Department of Mathematical Sciences Rensselaer Polytechnic Institute. 1996.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#19e1b6e0932bbe665a2c4a069a0636d8d5cf0c6f">View Context</a>].<br><br>Peter D. Turney. <a href="http://rexa.info/paper/f6f302674e1188614eaa6f23c782d8d1c0ea2320">Cost-Sensitive Classification: Empirical Evaluation of a Hybrid Genetic Decision Tree Induction Algorithm</a>. CoRR, csAI/9503102. 1995.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#f6f302674e1188614eaa6f23c782d8d1c0ea2320">View Context</a>].<br><br>Ilya Blayvas and Ron Kimmel. <a href="http://rexa.info/paper/5a08d3d508c193c4964f1f3f66bdcb78b98a905b">INVITED PAPER Special Issue on Multiresolution Analysis Machine Learning via Multiresolution Approximation</a>.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#5a08d3d508c193c4964f1f3f66bdcb78b98a905b">View Context</a>].<br><br>Andrew Watkins and Jon Timmis and Lois C. Boggess. <a href="http://rexa.info/paper/b4b7ea88c807c5c8746bf3067f13b1d07899bcc9">Artificial Immune Recognition System (AIRS): An ImmuneInspired Supervised Learning Algorithm</a>. (abw5,jt6@kent.ac.uk) Computing Laboratory, University of Kent.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#b4b7ea88c807c5c8746bf3067f13b1d07899bcc9">View Context</a>].<br><br>Ilya Blayvas and Ron Kimmel. <a href="http://rexa.info/paper/87afa910f706df9e28bfa697d6d2eea7c0cb53ef">Efficient Classification via Multiresolution Training Set Approximation</a>. CS Dept. Technion.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#87afa910f706df9e28bfa697d6d2eea7c0cb53ef">View Context</a>].<br><br>Matthias Scherf and W. Brauer. <a href="http://rexa.info/paper/19d5e6db33eb1a6c31be626538ea656f79e901b1">Feature Selection by Means of a Feature Weighting Approach</a>. GSF - National Research Center for Environment and Health.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#19d5e6db33eb1a6c31be626538ea656f79e901b1">View Context</a>].<br><br>Rudy Setiono and Huan Liu. <a href="http://rexa.info/paper/9a75a9a8ce786d6a05ad51afa124cd4f70bfbb36">Neural-Network Feature Selector</a>. Department of Information Systems and Computer Science National University of Singapore.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#9a75a9a8ce786d6a05ad51afa124cd4f70bfbb36">View Context</a>].<br><br>Christopher P. Diehl and Gert Cauwenberghs. <a href="http://rexa.info/paper/21ab0b68f14e5f4b1f401fa7bca294c1dc48061b">SVM Incremental Learning, Adaptation and Optimization</a>. Applied Physics Laboratory Johns Hopkins University.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#21ab0b68f14e5f4b1f401fa7bca294c1dc48061b">View Context</a>].<br><br>Wl odzisl/aw Duch and Rudy Setiono and Jacek M. Zurada. <a href="http://rexa.info/paper/8afa6796645ce4b0642db26c822cf6bfa8cc4d0d">Computational intelligence methods for rule-based data understanding</a>.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#8afa6796645ce4b0642db26c822cf6bfa8cc4d0d">View Context</a>].<br><br>Michalis K. Titsias and Aristidis Likas. <a href="http://rexa.info/paper/d26e510dd613f1f7821b5f6c4e9fe5868aa5f006">Shared Kernel Models for Class Conditional Density Estimation</a>.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#d26e510dd613f1f7821b5f6c4e9fe5868aa5f006">View Context</a>].<br><br>Lawrence O. Hall and Nitesh V. Chawla and Kevin W. Bowyer. <a href="http://rexa.info/paper/4773165a9efff672af50f07beb5d38c9afc92f5f">Combining Decision Trees Learned in Parallel</a>. Department of Computer Science and Engineering, ENB 118 University of South Florida.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#4773165a9efff672af50f07beb5d38c9afc92f5f">View Context</a>].<br><br>Charles Campbell and Nello Cristianini. <a href="http://rexa.info/paper/b6e169d69cd67763b95698e8961696fec9ca93bf">Simple Learning Algorithms for Training Support Vector Machines</a>. Dept. of Engineering Mathematics.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#b6e169d69cd67763b95698e8961696fec9ca93bf">View Context</a>].<br><br>Liping Wei and Russ B. Altman. <a href="http://rexa.info/paper/c5ac7c07f095dd7068c3ab10d4e7615b6d1564d5">An Automated System for Generating Comparative Disease Profiles and Making Diagnoses</a>. Section on Medical Informatics Stanford University School of Medicine, MSOB X215.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#c5ac7c07f095dd7068c3ab10d4e7615b6d1564d5">View Context</a>].<br><br>Chotirat Ann and Dimitrios Gunopulos. <a href="http://rexa.info/paper/4695569c53cd581fcc193415a8a94a1f92abf607">Scaling up the Naive Bayesian Classifier: Using Decision Trees for Feature Selection</a>. Computer Science Department University of California.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#4695569c53cd581fcc193415a8a94a1f92abf607">View Context</a>].<br><br>Federico Divina and Elena Marchiori. <a href="http://rexa.info/paper/c5da3959b262c7f9f7d339d5a61d1af0ed0ee805">Knowledge-Based Evolutionary Search for Inductive Concept Learning</a>. Vrije Universiteit of Amsterdam.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#c5da3959b262c7f9f7d339d5a61d1af0ed0ee805">View Context</a>].<br><br>Michael Lindenbaum and Shaul Markovitch and Dmitry Rusakov. <a href="http://rexa.info/paper/9a0080df56f0a8fb004723a7dece29109bc316ce">Selective Sampling Using Random Field Modelling</a>.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#9a0080df56f0a8fb004723a7dece29109bc316ce">View Context</a>].<br><br>Federico Divina and Elena Marchiori. <a href="http://rexa.info/paper/954de642cab661d060a2dbc68d3023ba3a9763e1">Handling Continuous Attributes in an Evolutionary Inductive Learner</a>. Department of Computer Science Vrije Universiteit.  [<a href="http://archive.ics.uci.edu/ml/support/Pima+Indians+Diabetes#954de642cab661d060a2dbc68d3023ba3a9763e1">View Context</a>].<br><br></p>
+
+<br>
+
+<p class="small-heading"><b>Citation Request:</b></p>
+<p class="normal">Please refer to the Machine Learning 
+Repository's <a href="http://archive.ics.uci.edu/ml/citation_policy.html">citation policy</a></p>
+
+</td></tr></tbody></table>
+
+
+<hr>
+
+<!-- OLD CODE:
+<p class="normal"><font size=1>[1] Papers were automatically harvested and associated with this data set, in collaboration with <a href="http://rexa.info"><font size=1>Rexa.info</font></a></font></p>
+-->
+
+<p class="normal"><font size="1">[1] Papers were automatically harvested and associated with this data set, in collaboration 
+with <a href="http://rexa.info/"><font size="1">Rexa.info</font></a></font></p>
+
+<table cellpadding="5" align="center"><tbody><tr valign="center">
+		<td><p class="normal">Supported By:</p></td>
+        <td><img src="./source_files/nsfe.gif" height="60"> </td>
+        <td><p class="normal">&nbsp;In Collaboration With:</p></td>
+        <td><img src="./source_files/rexaSmall.jpg"></td>
+</tr></tbody></table>
+
+<center>
+<span class="normal">
+<a href="http://archive.ics.uci.edu/ml/about.html">About</a>&nbsp;&nbsp;||&nbsp;
+<a href="http://archive.ics.uci.edu/ml/citation_policy.html">Citation Policy</a>&nbsp;&nbsp;||&nbsp;
+<a href="http://archive.ics.uci.edu/ml/donation_policy.html">Donation Policy</a>&nbsp;&nbsp;||&nbsp;
+<a href="http://archive.ics.uci.edu/ml/contact.html">Contact</a>&nbsp;&nbsp;||&nbsp;
+<a href="http://cml.ics.uci.edu/">CML</a>
+</span>
+</center>
+
+
+
+
+
+
+</body></html>

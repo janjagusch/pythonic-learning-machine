@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://archive.ics.uci.edu/ml/datasets/Geographical+Original+of+Music -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UCI Machine Learning Repository: Geographical Original of Music Data Set</title>
+
+<!-- Stylesheet link -->
+<link rel="stylesheet" type="text/css" href="./source_files/ml.css">
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function checkform ( form )
+{
+  // see http://www.thesitewizard.com/archive/validation.shtml
+  // for an explanation of this script and how to use it on your
+  // own website
+
+  // ** START **
+  if (form.q.value == "")
+  {
+    alert( "Please enter search terms." );
+    form.q.focus();
+    return false ;
+  }
+
+  if (getCheckedValue(form.sitesearch) == "ics.uci.edu" && form.q.value.indexOf("site:archive.ics.uci.edu/ml") == -1)
+  {
+    form.q.value = form.q.value + " site:archive.ics.uci.edu/ml";
+  }
+
+  // ** END **
+  return true ;
+}
+
+// return the value of the radio button that is checked
+// return an empty string if none are checked, or
+// there are no radio buttons
+function getCheckedValue(radioObj) {
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+//-->
+</script>
+
+</head>
+
+<body>
+
+
+<!-- SITE HEADER (INCLUDES LOGO AND SEARCH BOX) -->
+
+<table width="100%" bgcolor="#003366">
+<tbody><tr>
+	<td>
+		<span class="normal"><a href="https://archive.ics.uci.edu/ml/index.html" alt="Home"><img src="./source_files/logo.gif" border="0"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://cml.ics.uci.edu/"><font color="FFDD33">Center for Machine Learning and Intelligent Systems</font></a></span>
+	</td>
+	<td width="100%" valign="top" align="right">
+		<span class="whitetext">
+		<a href="https://archive.ics.uci.edu/ml/about.html">About</a>&nbsp;
+		<a href="https://archive.ics.uci.edu/ml/citation_policy.html">Citation Policy</a>&nbsp;
+		<a href="https://archive.ics.uci.edu/ml/donation_policy.html">Donate a Data Set</a>&nbsp;
+		<a href="https://archive.ics.uci.edu/ml/contact.html">Contact</a>
+		</span>
+
+		<br>
+		<br>
+		<!-- Search Google -->
+
+		<form method="GET" action="http://www.google.com/custom" onsubmit="return checkform(this);">
+		<input type="text" name="q" size="30" maxlength="255" value="">
+		<input type="submit" name="sa" value="Search">
+		<input type="hidden" name="cof" value="AH:center;LH:130;L:http://archive.ics.uci.edu/assets/logo.gif;LW:384;AWFID:869c0b2eaa8d518e;">
+		<input type="hidden" name="domains" value="ics.uci.edu">
+		<br>
+		<input type="radio" name="sitesearch" value="ics.uci.edu" checked=""> <span class="whitetext"><font size="1">Repository</font></span>
+		<input type="radio" name="sitesearch" value=""> <span class="whitetext"><font size="1">Web</font></span>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="http://www.google.com/search"><img src="./source_files/Logo_25blk.gif" border="0" alt="Google" align="middle" height="27"></a>
+		<br>
+		</form>
+		<!-- Search Google -->
+
+
+		<span class="whitetext"><a href="https://archive.ics.uci.edu/ml/datasets.html"><font size="3" color="#FFDD33"><b>View 
+ALL Data Sets</b></font></a></span>
+		<br>
+	</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<table width="100%" border="0" cellpadding="2"><tbody><tr><td>
+
+   <table><tbody><tr>
+     <td valign="top">
+	<p>
+	<span class="heading"><b>Geographical Original of Music Data Set</b></span>
+	<br><span class="normal"><i><font size="4">Download</font></i>: <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/00315/"><font style="BACKGROUND-COLOR: #FFFFAA" size="4">Data Folder</font></a>, <a href="https://archive.ics.uci.edu/ml/datasets/Geographical+Original+of+Music#"><font style="BACKGROUND-COLOR: #FFFFAA" size="4">Data Set Description</font></a></span></p>
+
+	<p class="normal"><b>Abstract</b>: Instances in this dataset contain audio features extracted from 1059 wave files. The task associated with the data is to predict the geographical origin of music.
+</p>
+     </td>
+     <td> </td>
+   </tr></tbody></table>
+
+<table border="1" cellpadding="6">
+	<tbody><tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Data Set Characteristics:&nbsp;&nbsp;</b></p></td>
+		<td><p class="normal">Multivariate</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Instances:</b></p></td>
+		<td><p class="normal">1059</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Area:</b></p></td>
+		<td><p class="normal">N/A</p></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Attribute Characteristics:</b></p></td>
+		<td><p class="normal">Real</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Attributes:</b></p></td>
+		<td><p class="normal">68</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Date Donated</b></p></td>
+		<td><p class="normal">2014-10-18</p></td>
+	</tr>
+	<tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Associated Tasks:</b></p></td>
+		<td><p class="normal">Classification, Regression</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Missing Values?</b></p></td>
+		<td><p class="normal">N/A</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Web Hits:</b></p></td>
+		<td><p class="normal">47862</p></td>
+	</tr>
+	<!--
+	<tr>
+		
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Highest Percentage Achieved:&nbsp;&nbsp;</b></p></td>
+		<td><p class="normal">N/A</p></td>
+	</tr>
+	-->
+</tbody></table>
+
+
+<br>
+
+<p class="small-heading"><b>Source:</b></p>
+<p class="normal">Creators:
+<br>Fang Zhou (fang.zhou '@' nottingham.edu.cn)
+<br>The University of Nottinghan, Ningbo, China
+<br>
+<br>Donors of the Dataset:
+<br>Fang Zhou (fang.zhou '@' nottingham.edu.cn)
+<br>Claire Q (eskoala '@' gmail.com)
+<br>Ross D. King (ross.king '@' manchester.ac.uk)</p>
+
+<br>
+
+<p class="small-heading"><b>Data Set Information:</b></p>
+<p class="normal"> The dataset was built from a personal collection of 1059 tracks covering 33 countries/area. The music used is traditional, ethnic or `world' only, as classified by the publishers of the product on which it appears. Any Western music is not included because its influence is global - what we seek are the aspects of music that most influence location. Thus, being able to specify a location with strong influence on the music is central. 
+<br>
+<br>The geographical location of origin was manually collected the information from the CD sleeve notes, and when this information was inadequate we searched other information sources. The location data is limited in precision to the country of origin.  
+<br>
+<br>The country of origin was determined by the artist's or artists' main country/area of residence.  Any track that had ambiguous origin is not included.  We have taken the position of each country's capital city (or the province of the area) by latitude and longitude as the absolute point of origin.
+<br>
+<br>The program MARSYAS[1] was used to extract audio features from the wave files. We used the default MARSYAS settings in single vector format (68 features) to estimate the performance with basic timbal information covering the entire length of each track. No feature weighting or pre-filtering was applied. All features were transformed to have a mean of 0, and a standard deviation of 1. We also investigated the utility of adding chromatic attributes. These describe the notes of the scale being used. This is especially important as a distinguishing feature in geographical ethnomusicology. The chromatic features provided by MARSYAS are 12 per octave - Western tuning, but it may be possible to tell something from how similar to or different from Western tuning the music is.
+<br>
+<br>[1] G. Tzanetakis and P. Cook, â€œMARSYAS: a framework for audio analysis,â€ Organised Sound, vol. 4, pp. 169â€“175, 2000. 
+<br></p>
+
+<br>
+
+<p class="small-heading"><b>Attribute Information:</b></p>
+<p class="normal">The dataset is present in two files, where each file corresponds to a different feature sets.
+<br>
+<br>Both files contain the audio features of 1059 tracks.
+<br>
+<br>In the 'default_features_1059_tracks.txt' file, the first 68 columns are audio features of the track, and the last two columns are the origin of the music, represented by latitude and longitude.
+<br>
+<br>In the 'default_plus_chromatic_features_1059_tracks.txt' file, the first 116 columns are audio features of the track, and the last two columns are the origin of the music.</p>
+
+<br>
+
+<p class="small-heading"><b>Relevant Papers:</b></p>
+<p class="normal">The description of music collection and audio features can be found in:
+<br>
+<br>Fang Zhou, Claire Q and Ross. D. King
+<br>Predicting the Geographical Origin of Music, ICDM, 2014</p>
+
+<br>
+
+
+<!-- OLD CODE:
+
+<p class="small-heading"><b>Papers That Cite This Data Set<sup>1</sup>:</b></p>
+<img src="../assets/rexa.jpg" />
+<p class="normal">N/A</p>
+
+-->
+
+
+
+<br>
+
+<p class="small-heading"><b>Citation Request:</b></p>
+<p class="normal">The following citation is requested if you use the dataset: 
+<br>
+<br>Fang Zhou, Claire Q and Ross. D. King
+<br>Predicting the Geographical Origin of Music, ICDM, 2014</p>
+
+</td></tr></tbody></table>
+
+
+<hr>
+
+<!-- OLD CODE:
+<p class="normal"><font size=1>[1] Papers were automatically harvested and associated with this data set, in collaboration with <a href="http://rexa.info"><font size=1>Rexa.info</font></a></font></p>
+-->
+
+
+
+<table cellpadding="5" align="center"><tbody><tr valign="center">
+		<td><p class="normal">Supported By:</p></td>
+        <td><img src="./source_files/nsfe.gif" height="60"> </td>
+        <td><p class="normal">&nbsp;In Collaboration With:</p></td>
+        <td><img src="./source_files/rexaSmall.jpg"></td>
+</tr></tbody></table>
+
+<center>
+<span class="normal">
+<a href="https://archive.ics.uci.edu/ml/about.html">About</a>&nbsp;&nbsp;||&nbsp;
+<a href="https://archive.ics.uci.edu/ml/citation_policy.html">Citation Policy</a>&nbsp;&nbsp;||&nbsp;
+<a href="https://archive.ics.uci.edu/ml/donation_policy.html">Donation Policy</a>&nbsp;&nbsp;||&nbsp;
+<a href="https://archive.ics.uci.edu/ml/contact.html">Contact</a>&nbsp;&nbsp;||&nbsp;
+<a href="http://cml.ics.uci.edu/">CML</a>
+</span>
+</center>
+
+
+
+
+
+
+</body></html>

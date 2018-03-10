@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)https://archive.ics.uci.edu/ml/datasets/Parkinson+Speech+Dataset+with++Multiple+Types+of+Sound+Recordings -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UCI Machine Learning Repository: Parkinson Speech Dataset with  Multiple Types of Sound Recordings Data Set</title>
+
+<!-- Stylesheet link -->
+<link rel="stylesheet" type="text/css" href="./source_files/ml.css">
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function checkform ( form )
+{
+  // see http://www.thesitewizard.com/archive/validation.shtml
+  // for an explanation of this script and how to use it on your
+  // own website
+
+  // ** START **
+  if (form.q.value == "")
+  {
+    alert( "Please enter search terms." );
+    form.q.focus();
+    return false ;
+  }
+
+  if (getCheckedValue(form.sitesearch) == "ics.uci.edu" && form.q.value.indexOf("site:archive.ics.uci.edu/ml") == -1)
+  {
+    form.q.value = form.q.value + " site:archive.ics.uci.edu/ml";
+  }
+
+  // ** END **
+  return true ;
+}
+
+// return the value of the radio button that is checked
+// return an empty string if none are checked, or
+// there are no radio buttons
+function getCheckedValue(radioObj) {
+	if(!radioObj)
+		return "";
+	var radioLength = radioObj.length;
+	if(radioLength == undefined)
+		if(radioObj.checked)
+			return radioObj.value;
+		else
+			return "";
+	for(var i = 0; i < radioLength; i++) {
+		if(radioObj[i].checked) {
+			return radioObj[i].value;
+		}
+	}
+	return "";
+}
+//-->
+</script>
+
+</head>
+
+<body>
+
+
+<!-- SITE HEADER (INCLUDES LOGO AND SEARCH BOX) -->
+
+<table width="100%" bgcolor="#003366">
+<tbody><tr>
+	<td>
+		<span class="normal"><a href="https://archive.ics.uci.edu/ml/index.html" alt="Home"><img src="./source_files/logo.gif" border="0"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://cml.ics.uci.edu/"><font color="FFDD33">Center for Machine Learning and Intelligent Systems</font></a></span>
+	</td>
+	<td width="100%" valign="top" align="right">
+		<span class="whitetext">
+		<a href="https://archive.ics.uci.edu/ml/about.html">About</a>&nbsp;
+		<a href="https://archive.ics.uci.edu/ml/citation_policy.html">Citation Policy</a>&nbsp;
+		<a href="https://archive.ics.uci.edu/ml/donation_policy.html">Donate a Data Set</a>&nbsp;
+		<a href="https://archive.ics.uci.edu/ml/contact.html">Contact</a>
+		</span>
+
+		<br>
+		<br>
+		<!-- Search Google -->
+
+		<form method="GET" action="http://www.google.com/custom" onsubmit="return checkform(this);">
+		<input type="text" name="q" size="30" maxlength="255" value="">
+		<input type="submit" name="sa" value="Search">
+		<input type="hidden" name="cof" value="AH:center;LH:130;L:http://archive.ics.uci.edu/assets/logo.gif;LW:384;AWFID:869c0b2eaa8d518e;">
+		<input type="hidden" name="domains" value="ics.uci.edu">
+		<br>
+		<input type="radio" name="sitesearch" value="ics.uci.edu" checked=""> <span class="whitetext"><font size="1">Repository</font></span>
+		<input type="radio" name="sitesearch" value=""> <span class="whitetext"><font size="1">Web</font></span>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="http://www.google.com/search"><img src="./source_files/Logo_25blk.gif" border="0" alt="Google" align="middle" height="27"></a>
+		<br>
+		</form>
+		<!-- Search Google -->
+
+
+		<span class="whitetext"><a href="https://archive.ics.uci.edu/ml/datasets.html"><font size="3" color="#FFDD33"><b>View 
+ALL Data Sets</b></font></a></span>
+		<br>
+	</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<table width="100%" border="0" cellpadding="2"><tbody><tr><td>
+
+   <table><tbody><tr>
+     <td valign="top">
+	<p>
+	<span class="heading"><b>Parkinson Speech Dataset with  Multiple Types of Sound Recordings Data Set</b></span>
+	<br><span class="normal"><i><font size="4">Download</font></i>: <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/00301/"><font style="BACKGROUND-COLOR: #FFFFAA" size="4">Data Folder</font></a>, <a href="https://archive.ics.uci.edu/ml/datasets/Parkinson+Speech+Dataset+with++Multiple+Types+of+Sound+Recordings#"><font style="BACKGROUND-COLOR: #FFFFAA" size="4">Data Set Description</font></a></span></p>
+
+	<p class="normal"><b>Abstract</b>: The training data belongs to 20 Parkinson's Disease (PD) patients and 20 healthy subjects. From all subjects, multiple types of sound recordings (26) are taken.</p>
+     </td>
+     <td> </td>
+   </tr></tbody></table>
+
+<table border="1" cellpadding="6">
+	<tbody><tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Data Set Characteristics:&nbsp;&nbsp;</b></p></td>
+		<td><p class="normal">Multivariate</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Instances:</b></p></td>
+		<td><p class="normal">1040</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Area:</b></p></td>
+		<td><p class="normal">Life</p></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Attribute Characteristics:</b></p></td>
+		<td><p class="normal">Integer, Real</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Attributes:</b></p></td>
+		<td><p class="normal">26</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Date Donated</b></p></td>
+		<td><p class="normal">2014-06-12</p></td>
+	</tr>
+	<tr>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Associated Tasks:</b></p></td>
+		<td><p class="normal">Classification, Regression</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Missing Values?</b></p></td>
+		<td><p class="normal">N/A</p></td>
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Number of Web Hits:</b></p></td>
+		<td><p class="normal">45628</p></td>
+	</tr>
+	<!--
+	<tr>
+		
+		<td bgcolor="#DDEEFF"><p class="normal"><b>Highest Percentage Achieved:&nbsp;&nbsp;</b></p></td>
+		<td><p class="normal">N/A</p></td>
+	</tr>
+	-->
+</tbody></table>
+
+
+<br>
+
+<p class="small-heading"><b>Source:</b></p>
+<p class="normal">1. Olcay KURSUN, PhD., 
+<br>Istanbul University, 
+<br>Department of Computer Engineering, 
+<br>34320, Istanbul, Turkey 
+<br>Phone: +90 (212) 473 7070 - 17827 
+<br>Email: <u>okursun <b>'@'</b> istanbul.edu.tr</u>
+<br>
+<br>2. Betul ERDOGDU SAKAR, PhD., 
+<br>Bahcesehir University, 
+<br>Department of Software Engineering, 
+<br>34381, Istanbul, Turkey 
+<br>Phone: +90 (212) 381 0589 
+<br>Email: <u>betul.erdogdu <b>'@'</b> eng.bahcesehir.edu.tr</u>
+<br>
+<br>3. M. Erdem ISENKUL, M.S., 
+<br>Istanbul University, 
+<br>Department of Computer Engineering, 
+<br>34320, Istanbul, Turkey 
+<br>Email: <u>eisenkul <b>'@'</b> istanbul.edu.tr</u>
+<br>
+<br>4. C. Okan SAKAR, PhD., 
+<br>Bahcesehir University, 
+<br>Department of Computer Engineering, 
+<br>34381, Istanbul, Turkey 
+<br>Phone: +90 (212) 381 0571 
+<br>Email: <u>okan.sakar <b>'@'</b> eng.bahcesehir.edu.tr</u>
+<br>
+<br>5. Ahmet SERTBAS, PhD, 
+<br>Istanbul University, 
+<br>Department of Computer Engineering, 
+<br>34320, Istanbul, Turkey 
+<br>Email: <u>asertbas <b>'@'</b> istanbul.edu.tr</u>
+<br>
+<br>6. Fikret GURGEN, PhD., 
+<br>Bogazici University, 
+<br>Department of Computer Engineering, 
+<br>34342, Istanbul, Turkey 
+<br>Email: <u>gurgen <b>'@'</b> boun.edu.tr</u>
+<br>
+<br>7. Sakir DELIL, M.D., PhD., 
+<br>Istanbul University,
+<br>CerrahpaÅŸa Faculty of Medicine, 
+<br>Department of Neurology, 
+<br>34098, Istanbul, Turkey 
+<br>Email: <u>sakir.delil <b>'@'</b> ctf.edu.tr</u>
+<br>
+<br>8. Hulya APAYDIN, M.D., PhD., 
+<br>Istanbul University, 
+<br>CerrahpaÅŸa Faculty of Medicine, 
+<br>Department of Neurology, 
+<br>34098, Istanbul, Turkey 
+<br>Email: <u>hulya.apaydin <b>'@'</b> ctf.edu.tr</u>
+<br>
+<br>Donor:
+<br>C. Okan SAKAR, PhD., 
+<br>Bahcesehir University, 
+<br>Department of Computer Engineering, 
+<br>34381, Istanbul, Turkey 
+<br>Phone: +90 (212) 381 0571 
+<br>Email: <u>okan.sakar <b>'@'</b> eng.bahcesehir.edu.tr</u>
+<br></p>
+
+<br>
+
+<p class="small-heading"><b>Data Set Information:</b></p>
+<p class="normal">The PD database consists of training and test files. The training data belongs to 20 PWP (6 female, 14 male) and 20 healthy individuals (10 female, 10 male) who appealed at the Department of Neurology in Cerrahpasa Faculty of Medicine, Istanbul University. From all subjects, multiple types of sound recordings (26 voice samples including sustained vowels, numbers, words and short sentences) are taken.  A group of 26 linear and timeâ€“frequency based features are extracted from each voice sample. UPDRS ((Unified Parkinsonâ€™s Disease Rating Scale) score of each patient which is determined by expert physician is also available in this dataset. Therefore, this dataset can also be used for regression.
+<br>
+<br>After collecting the training dataset which consists of multiple types of sound recordings and performing our experiments, in line with the obtained findings we continued collecting an independent test set from PWP via the same physicianâ€™s examination process under the same conditions. During the collection of this dataset, 28 PD patients are asked to say only the sustained vowels 'a' and 'o' three times respectively which makes a total of 168 recordings. The same 26 features are extracted from voice samples of this dataset. This dataset can be used as an independent test set to validate the results obtained on training set.
+<br>
+<br>Further details are contained in the following reference -- if you use this dataset, please cite: 
+<br>Erdogdu Sakar, B., Isenkul, M., Sakar, C.O., Sertbas, A., Gurgen, F., Delil, S., Apaydin, H., Kursun,
+<br>O., 'Collection and Analysis of a Parkinson Speech Dataset with Multiple Types of Sound
+<br>Recordings', IEEE Journal of Biomedical and Health Informatics, vol. 17(4), pp. 828-834, 2013
+<br>
+<br>Training Data File:
+<br>Each subject has 26 voice samples including sustained vowels, numbers, words and short 
+<br>sentences. The voice samples in the training data file are given in the 
+<br>following order:
+<br>
+<br>sample# - corresponding voice samples
+<br>1: sustained vowel (aaaâ€¦â€¦)
+<br>2: sustained vowel (oooâ€¦...)
+<br>3: sustained vowel (uuuâ€¦...)
+<br>4-13: numbers from 1 to 10
+<br>14-17: short sentences
+<br>18-26: words
+<br>
+<br>Test Data File:
+<br>28 PD patients are asked to say only the sustained vowels 'a' and 'o' three times respectively which makes a total of 168 recordings (each subject has 6 voice samples) The voice samples in the test data file are given in the following order:
+<br>
+<br>sample# - corresponding voice samples
+<br>1-3: sustained vowel (aaaâ€¦â€¦)
+<br>4-6: sustained vowel (oooâ€¦â€¦)
+<br></p>
+
+<br>
+
+<p class="small-heading"><b>Attribute Information:</b></p>
+<p class="normal">Training Data File:
+<br>column 1: Subject id
+<br>
+<br>colum 2-27: features 
+<br>features 1-5: Jitter (local),Jitter (local, absolute),Jitter (rap),Jitter (ppq5),Jitter (ddp),
+<br>features 6-11: Shimmer (local),Shimmer (local, dB),Shimmer (apq3),Shimmer (apq5), Shimmer (apq11),Shimmer (dda),
+<br>features 12-14: AC,NTH,HTN,
+<br>features 15-19: Median pitch,Mean pitch,Standard deviation,Minimum pitch,Maximum pitch,
+<br>features 20-23: Number of pulses,Number of periods,Mean period,Standard deviation of period, features 24-26: Fraction of locally unvoiced frames,Number of voice breaks,Degree of voice breaks
+<br>
+<br>column 28: UPDRS
+<br>column 29: class information
+<br>
+<br>Test Data File:
+<br>column 1: Subject id
+<br>
+<br>colum 2-27: features 
+<br>features 1-5: Jitter (local),Jitter (local, absolute),Jitter (rap),Jitter (ppq5),Jitter (ddp),
+<br>features 6-11: Shimmer (local),Shimmer (local, dB),Shimmer (apq3),Shimmer (apq5), Shimmer (apq11),Shimmer (dda),
+<br>features 12-14: AC,NTH,HTN,
+<br>features 15-19: Median pitch,Mean pitch,Standard deviation,Minimum pitch,Maximum pitch,
+<br>features 20-23: Number of pulses,Number of periods,Mean period,Standard deviation of period,
+<br>features 24-26: Fraction of locally unvoiced frames,Number of voice breaks,Degree of voice breaks
+<br>
+<br>column 28: class information
+<br></p>
+
+<br>
+
+<p class="small-heading"><b>Relevant Papers:</b></p>
+<p class="normal">Erdogdu Sakar, B., Isenkul, M., Sakar, C.O., Sertbas, A., Gurgen, F., Delil, S., Apaydin, H., Kursun, O., 'Collection and Analysis of a Parkinson Speech Dataset with Multiple Types of Sound Recordings', IEEE Journal of Biomedical and Health Informatics, vol. 17(4), pp. 828-834, 2013.
+<br>
+<br>Isenkul, M.E., ErdoÄŸdu, B., Sakar, C.O., GÃ¼mÃ¼s, E., Delil, M.S., GÃ¼rgen, F., Sertbas, A., Kursun, O.,
+<br>Parkinson HastalÄ±ÄŸÄ±nÄ±n Ses Disfonilerinden TeÅŸhisi iÃ§in bir Ses VeritabanÄ± OlusturulmasÄ± ve
+<br>Ã–rÃ¼ntÃ¼lerinin KullanÄ±mÄ±, 16. Biyomedikal MÃ¼hendisliÄŸi Ulusal ToplantÄ±sÄ± (BÄ°YOMUT 2011),
+<br>Antalya, Turkey, October, 2011.</p>
+
+<br>
+
+
+<!-- OLD CODE:
+
+<p class="small-heading"><b>Papers That Cite This Data Set<sup>1</sup>:</b></p>
+<img src="../assets/rexa.jpg" />
+<p class="normal">N/A</p>
+
+-->
+
+
+
+<br>
+
+<p class="small-heading"><b>Citation Request:</b></p>
+<p class="normal">Please cite the following paper if you use this dataset:
+<br>Erdogdu Sakar, B., Isenkul, M., Sakar, C.O., Sertbas, A., Gurgen, F., Delil, S., Apaydin, H., Kursun, O., 'Collection and Analysis of a Parkinson Speech Dataset with Multiple Types of Sound Recordings', IEEE Journal of Biomedical and Health Informatics, vol. 17(4), pp. 828-834, 2013.
+<br></p>
+
+</td></tr></tbody></table>
+
+
+<hr>
+
+<!-- OLD CODE:
+<p class="normal"><font size=1>[1] Papers were automatically harvested and associated with this data set, in collaboration with <a href="http://rexa.info"><font size=1>Rexa.info</font></a></font></p>
+-->
+
+
+
+<table cellpadding="5" align="center"><tbody><tr valign="center">
+		<td><p class="normal">Supported By:</p></td>
+        <td><img src="./source_files/nsfe.gif" height="60"> </td>
+        <td><p class="normal">&nbsp;In Collaboration With:</p></td>
+        <td><img src="./source_files/rexaSmall.jpg"></td>
+</tr></tbody></table>
+
+<center>
+<span class="normal">
+<a href="https://archive.ics.uci.edu/ml/about.html">About</a>&nbsp;&nbsp;||&nbsp;
+<a href="https://archive.ics.uci.edu/ml/citation_policy.html">Citation Policy</a>&nbsp;&nbsp;||&nbsp;
+<a href="https://archive.ics.uci.edu/ml/donation_policy.html">Donation Policy</a>&nbsp;&nbsp;||&nbsp;
+<a href="https://archive.ics.uci.edu/ml/contact.html">Contact</a>&nbsp;&nbsp;||&nbsp;
+<a href="http://cml.ics.uci.edu/">CML</a>
+</span>
+</center>
+
+
+
+
+
+
+</body></html>

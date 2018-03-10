@@ -1,22 +1,28 @@
+from copy import copy
+
 class NeuralNetwork(object):
     """
     Class represents neural network.
     Attributes:
-        layer_list: List of layers.
+        hidden_layers: List of layers.
         output_neuron: Output neuron.
     """
 
-    def __init__(self, layer_list, output_neuron):
-        self.layer_list = layer_list
+    def __init__(self, sensors, hidden_layers, output_neuron):
+        self.sensors = sensors
+        self.hidden_layers = hidden_layers
         self.output_neuron = output_neuron
 
-    def get_neuron_layers(self):
-        return self.layer_list[1:]
+    def __init__(self, neural_network):
+        self.sensors = copy(neural_network.sensors)
+        self.hidden_layers = [copy(hidden_layer) for hidden_layer in neural_network.hidden_layers]
+        self.output_neuron = copy(neural_network.output_neuron)
 
-    def get_sensor_layer(self):
-        return self.layer_list[0]
+    def calculate(self):
+        for hidden_layer in self.hidden_layers:
+            for neuron in hidden_layer:
+                neuron.calculate()
+        self.output_neuron.calculate()
 
-    def calculate_neurons(self):
-        for neuron_layer in self.get_neuron_layers():
-            for neuron in neuron_layer.nodes:
-                neuron.calculate_neuron()
+    def get_predictions(self):
+        return self.output_neuron.semantics

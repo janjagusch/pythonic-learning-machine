@@ -40,6 +40,6 @@ class Neuron(Node):
     def _calculate_output(self, weighted_input):
         return calculate_output(weighted_input, self.activation_function)
 
-    def calculate_neuron(self):
+    def calculate(self):
         weighted_input = self._calculate_weighted_input()
         self.semantics = self._calculate_output(weighted_input)
