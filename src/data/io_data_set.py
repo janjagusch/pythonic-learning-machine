@@ -10,16 +10,16 @@ def _get_path_to_data_dir():
 
 
 def read_raw_data_set(data_set_name):
-    """Reads raw data_sets set from data_sets/raw/'data_set_name'."""
-    file_path = join(_get_path_to_data_dir(), "raw", data_set_name)
+    """Reads 01_raw data_sets set from data_sets/01_raw/'data_set_name'."""
+    file_path = join(_get_path_to_data_dir(), "01_raw", data_set_name)
     file_name = 'data_set.csv'
     return read_csv(join(file_path, file_name), header=None)
 
 
 def read_cleaned_data_set(data_set_name):
-    """Reads cleaned data_sets set from data_sets/cleaned/'data_set_name'."""
-    # TODO convert cleaned data sets to serialized pickle.
-    file_path = join(_get_path_to_data_dir(), "cleaned")
+    """Reads 02_cleaned data_sets set from data_sets/02_cleaned/'data_set_name'."""
+    # TODO convert 02_cleaned data sets to serialized pickle.
+    file_path = join(_get_path_to_data_dir(), "02_cleaned")
     file_name = data_set_name + '.csv'
     return read_csv(join(file_path, file_name), header=None)
 
@@ -62,7 +62,7 @@ def data_set_from_pickle(file_path, file_name):
 
 def load_samples(data_set_name, index):
 
-    file_path = join('resampled', data_set_name)
+    file_path = join('04_resampled', data_set_name)
     file_names = [sample_label + "_" + str(index) for sample_label in SAMPLE_LABELS]
 
     return [data_set_from_pickle(file_path, file_name) for file_name in file_names]

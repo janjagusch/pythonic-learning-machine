@@ -42,7 +42,7 @@ def resample_data_set(data_set, train_frac=None, valid_frac=None, test_frac=None
 
 def _serialize_data_samples(data_samples, data_set_name, index):
 
-    file_path = join('resampled', data_set_name)
+    file_path = join('04_resampled', data_set_name)
 
     file_names = [sample_name + "_" + str(index) for sample_name in ['training', 'validation', 'testing']]
 
@@ -56,7 +56,7 @@ def serialize_samples_list(data_samples_list, data_set_name):
 
 def process_all_data_sets():
     """"""
-    data_set_names = [remove_extension(file) for file in list_files('cleaned')]
+    data_set_names = [remove_extension(file) for file in list_files('02_cleaned')]
     [serialize_samples_list(data_samples_list, data_set_name) for data_samples_list, data_set_name in
      zip(
          [resample_data_set(data_set, 0.5, 0.3, 0.2) for data_set in

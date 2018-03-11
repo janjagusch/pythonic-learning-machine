@@ -13,10 +13,11 @@ class NeuralNetwork(object):
         self.hidden_layers = hidden_layers
         self.output_neuron = output_neuron
 
-    def __init__(self, neural_network):
-        self.sensors = copy(neural_network.sensors)
-        self.hidden_layers = [copy(hidden_layer) for hidden_layer in neural_network.hidden_layers]
-        self.output_neuron = copy(neural_network.output_neuron)
+    def __copy__(self):
+        copy_sensors = copy(self.sensors)
+        copy_hidden_layers = [copy(hidden_layer) for hidden_layer in self.hidden_layers]
+        copy_output_neuron = copy(self.output_neuron)
+        return NeuralNetwork(copy_sensors, copy_hidden_layers, copy_output_neuron)
 
     def calculate(self):
         for hidden_layer in self.hidden_layers:
