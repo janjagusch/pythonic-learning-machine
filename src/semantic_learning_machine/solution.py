@@ -21,15 +21,15 @@ class Solution(object):
     def _better_than(self, solution):
         return self.mean_error < solution.mean_error if solution else None
 
-    def _calculate_absolute_error(self, target):
+    def _calculate_error(self, target):
         return self.neural_network.get_predictions() - target
 
-    def _calculate_mean_error(self):
+    def calculate_mean_error(self):
         return root_mean_squared_error(abs(self.error))
 
 def create_solution(ancestor, neural_network, target):
     solution = Solution(neural_network, None, None, None)
-    solution.error = solution._calculate_absolute_error(target)
-    solution.mean_error = solution._calculate_mean_error()
+    solution.error = solution._calculate_error(target)
+    solution.mean_error = solution.calculate_mean_error()
     solution.better_than_ancestor = solution._better_than(ancestor)
     return solution

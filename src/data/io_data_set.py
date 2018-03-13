@@ -24,6 +24,12 @@ def read_cleaned_data_set(data_set_name):
     return read_csv(join(file_path, file_name), header=None)
 
 
+def read_standardized_data_set(data_set_name):
+    file_path = join(_get_path_to_data_dir(), '03_standardized')
+    file_name = data_set_name + '.pkl'
+    return read_pickle(join(file_path, file_name))
+
+
 def list_files(dir):
     """Lists files in dir."""
     file_path = join(_get_path_to_data_dir(), dir)

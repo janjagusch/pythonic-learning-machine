@@ -1,7 +1,6 @@
 import unittest
-from neural_network.node import Sensor, Neuron
-from neural_network.connection import Connection
-from neural_network.neural_network import NeuralNetwork
+from semantic_learning_machine.neural_network.node import Sensor, Neuron
+from semantic_learning_machine.neural_network.connection import Connection
 from numpy import array
 from numpy.testing import assert_array_equal
 

@@ -1,28 +1,33 @@
-from neural_network.node import create_neuron
 from random import randint, sample
+from semantic_learning_machine.neural_network.neural_network import create_neuron
 
 class Mutation(object):
 
-    def mutate_network(self, neural_network):
+    def mutate_network(self, semantic_learning_machine):
         pass
 
-    def _create_final_hidden_neuron(self):
-        return create_neuron('tanh')
+    def _create_final_hidden_neuron(self, bias):
+        return create_neuron('tanh', bias)
 
 class Mutation1(Mutation):
     """Adds one neuron to the last hidden layer."""
 
-    def mutate_network(self, neural_network):
-        hidden_layers = [[] for i in len(neural_network.hidden_layers) - 1]
-        hidden_layers.append([self._create_final_hidden_neuron()])
+    def mutate_network(self, semantic_learning_machine):
+        neural_network = semantic_learning_machine.neural_network
+        bias = neural_network.bias
+        hidden_layers = [[] for i in len(semantic_learning_machine.hidden_layers) - 1]
+        hidden_layers.append([self._create_final_hidden_neuron(bias)])
         return hidden_layers
 
 class Mutation2(Mutation):
     """Adds one neuron the each hidden layer."""
 
-    def mutate_network(self, neural_network):
-        hidden_layers = [[create_neuron()] for i in len(neural_network) - 1]
-        hidden_layers.append([self._create_final_hidden_neuron()])
+    def mutate_network(self, semantic_learning_machine):
+        neural_network = semantic_learning_machine.current_champion.neural_network
+        bias = neural_network.bias
+        hidden_layers = [[create_neuron(activation_function=None, bias=bias)]
+                         for i in range(len(neural_network.hidden_layers) - 1)]
+        hidden_layers.append([self._create_final_hidden_neuron(bias)])
         return hidden_layers
 
 class Mutation3(Mutation):
@@ -31,10 +36,12 @@ class Mutation3(Mutation):
     def __init__(self, max_neurons):
         self.max_neurons = max_neurons
 
-    def mutate_network(self, neural_network):
+    def mutate_network(self, semantic_learning_machine):
+        neural_network = semantic_learning_machine.neural_network
+        bias = neural_network.bias
         neurons = randint(1, self.max_neurons)
-        hidden_layers = [[create_neuron() for i in range(neurons)] for j in len(neural_network) - 1]
-        hidden_layers.append([self._create_final_hidden_neuron()])
+        hidden_layers = [[create_neuron() for i in range(neurons)] for j in range(len(neural_network.hidden_layers) - 1)]
+        hidden_layers.append([self._create_final_hidden_neuron(bias)])
         return hidden_layers
 
 class Mutation4(Mutation):
@@ -43,14 +50,12 @@ class Mutation4(Mutation):
     def __init__(self, max_neurons):
         self.max_neurons = max_neurons
 
-    def mutate_network(self, neural_network):
+    def mutate_network(self, semantic_learning_machine):
+        neural_network = semantic_learning_machine.neural_network
+        bias = neural_network.bias
         number_layers = len(neural_network.hidden_layers)
         neurons = self.max_neurons if self.max_neurons >= number_layers else number_layers
         neurons = sample(range(1, neurons), number_layers - 1)
         hidden_layers = [[create_neuron() for i in range(neuron)] for neuron in neurons]
-        hidden_layers.append([self._create_final_hidden_neuron()])
+        hidden_layers.append([self._create_final_hidden_neuron(bias)])
         return hidden_layers
-
-
-
-

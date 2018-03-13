@@ -1,7 +1,6 @@
-from numpy import sum, array
-from neural_network.activation_function import calculate_output, ACTIVATION_FUNCTIONS
+from numpy import sum
+from semantic_learning_machine.neural_network.activation_function import calculate_output
 from copy import copy
-from random import choice
 
 
 class Node(object):
@@ -51,7 +50,3 @@ class Neuron(Node):
         weighted_input = self._calculate_weighted_input()
         self.semantics = self._calculate_output(weighted_input)
 
-def create_neuron(activation_function=None):
-    if not activation_function:
-        activation_function = choice(list(ACTIVATION_FUNCTIONS.keys()))
-    return Neuron(array([]), list(), activation_function)
