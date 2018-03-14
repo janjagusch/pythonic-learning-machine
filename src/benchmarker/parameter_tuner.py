@@ -19,13 +19,13 @@ _SLM_PARAMETERS = {
 _NEAT_PARAMETERS = {
     'number_generations': [_BASE_PARAMETERS.get('number_generations')],
     'population_size': [_BASE_PARAMETERS.get('population_size')],
-    'compatibility_threshold': [1, 3, 5],
-    'compatibility_disjoint_coefficient': [1, 2],
+    'compatibility_threshold': [1],
+    'compatibility_disjoint_coefficient': [1],
     'compatibility_weight_coefficient': [1, 2],
-    'conn_add_prob': [0.1, 0.25, 0.5],
-    'conn_delete_prob': [0.1, 0.25, 0.5],
-    'node_add_prob': [0.1, 0.25, 0.5],
-    'node_delete_prob': [0.1, 0.25, 0.5]
+    'conn_add_prob': [0.1],
+    'conn_delete_prob': [0.1],
+    'node_add_prob': [0.1],
+    'node_delete_prob': [0.1]
 }
 
 def _create_configuration_list(list_dict):

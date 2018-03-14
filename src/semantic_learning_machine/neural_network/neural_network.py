@@ -41,6 +41,22 @@ class NeuralNetwork(object):
             sensor.semantics = data_set[sensor_data].as_matrix()
         self.bias.semantics.resize(shape(self.sensors[0].semantics), refcheck = False)
 
+    def get_hidden_neurons(self):
+        neurons = list()
+        [neurons.extend(hidden_neurons) for hidden_neurons in self.hidden_layers]
+        return neurons
+
+    def get_connections(self):
+        neurons = list()
+        neurons.extend(self.get_hidden_neurons())
+        neurons.append(self.output_neuron)
+        connections = list()
+        [connections.extend(neuron.input_connections) for neuron in neurons]
+        return connections
+
+    def get_topology(self):
+        return (len(self.hidden_layers), len(self.get_hidden_neurons()), len(self.get_connections()))
+
 def create_neuron(activation_function=None, bias=None):
     """"""
     # If activation function not defined, choose activation function at random.
