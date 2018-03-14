@@ -40,13 +40,18 @@ class Neuron(Node):
         copy_activation_function = self.activation_function
         return Neuron(copy_semantics, copy_input_connections, copy_activation_function)
 
+    # TODO: deepcopy with empty semantics.
+
     def _calculate_weighted_input(self):
+        """Calculates weighted input from input connections."""
         return sum([connection.from_node.semantics * connection.weight for connection in self.input_connections], axis=0)
 
     def _calculate_output(self, weighted_input):
+        """Calculates semantics, based on weighted input."""
         return calculate_output(weighted_input, self.activation_function)
 
     def calculate(self):
+        """Calculates weighted input, then calculates semantics."""
         weighted_input = self._calculate_weighted_input()
         self.semantics = self._calculate_output(weighted_input)
 

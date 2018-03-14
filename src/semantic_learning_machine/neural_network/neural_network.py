@@ -1,7 +1,7 @@
 from copy import copy
 from numpy import array, shape
 from semantic_learning_machine.neural_network.node import Neuron
-from semantic_learning_machine.neural_network.activation_function import ACTIVATION_FUNCTIONS
+from semantic_learning_machine.neural_network.activation_function import _ACTIVATION_FUNCTIONS
 from semantic_learning_machine.neural_network.connection import Connection
 from random import choice, uniform
 from data.data_set import get_input_variables
@@ -10,7 +10,9 @@ class NeuralNetwork(object):
     """
     Class represents neural network.
     Attributes:
-        hidden_layers: List of layers.
+        sensors: List of input sensors.
+        bias: Bias neuron.
+        hidden_layers: List of layers, containing hidden neurons.
         output_neuron: Output neuron.
     """
 
@@ -21,32 +23,41 @@ class NeuralNetwork(object):
         self.output_neuron = output_neuron
 
     def __copy__(self):
+        # Bias can be referenced.
         copy_bias = self.bias
-        copy_sensors = copy(self.sensors)
+        # Sensors can be referenced.
+        copy_sensors = self.sensors
+        # Creates shallow copy of every hidden layer, while only referencing the contained neurons.
         copy_hidden_layers = [copy(hidden_layer) for hidden_layer in self.hidden_layers]
+        # Copies output neuron.
         copy_output_neuron = copy(self.output_neuron)
         return NeuralNetwork(copy_sensors, copy_bias, copy_hidden_layers, copy_output_neuron)
 
     def calculate(self):
+        """Calculates semantics of all hidden neurons and output neuron."""
         for hidden_layer in self.hidden_layers:
             for neuron in hidden_layer:
                 neuron.calculate()
         self.output_neuron.calculate()
 
     def get_predictions(self):
+        """Returns semantics of output neuron."""
         return self.output_neuron.semantics
 
     def load_sensors(self, data_set):
+        """Loads input variables of data set into sensors. Adjusts length of bias."""
         for sensor, sensor_data in zip(self.sensors, get_input_variables(data_set)):
             sensor.semantics = data_set[sensor_data].as_matrix()
         self.bias.semantics.resize(shape(self.sensors[0].semantics), refcheck = False)
 
     def get_hidden_neurons(self):
+        """Returns list of hidden neurons."""
         neurons = list()
         [neurons.extend(hidden_neurons) for hidden_neurons in self.hidden_layers]
         return neurons
 
     def get_connections(self):
+        """Returns list of connections."""
         neurons = list()
         neurons.extend(self.get_hidden_neurons())
         neurons.append(self.output_neuron)
@@ -55,13 +66,14 @@ class NeuralNetwork(object):
         return connections
 
     def get_topology(self):
+        """Returns number of hidden layers, number of hidden neurons and number of connections."""
         return (len(self.hidden_layers), len(self.get_hidden_neurons()), len(self.get_connections()))
 
 def create_neuron(activation_function=None, bias=None):
-    """"""
+    """Creates neuron with defined activation function and bias."""
     # If activation function not defined, choose activation function at random.
     if not activation_function:
-        activation_function = choice(list(ACTIVATION_FUNCTIONS.keys()))
+        activation_function = choice(list(_ACTIVATION_FUNCTIONS.keys()))
     neuron = Neuron(array([]), list(), activation_function)
     # If is biased, connect to bias with random weight.
     if bias:
