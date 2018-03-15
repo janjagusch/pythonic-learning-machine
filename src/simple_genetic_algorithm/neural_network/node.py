@@ -1,6 +1,6 @@
-from numpy import sum
+from numpy import sum, array
 from semantic_learning_machine.neural_network.activation_function import calculate_output
-from copy import copy
+from copy import deepcopy
 
 
 class Node(object):
@@ -34,13 +34,11 @@ class Neuron(Node):
         self.input_connections = input_connections
         self.activation_function = activation_function
 
-    def __copy__(self):
-        copy_semantics = copy(self.semantics)
-        copy_input_connections = copy(self.input_connections)
-        copy_activation_function = self.activation_function
-        return Neuron(copy_semantics, copy_input_connections, copy_activation_function)
-
-    # TODO: deepcopy with empty semantics.
+    def __deepcopy__(self, memodict={}):
+        input_connections = [deepcopy(connection) for connection in self.input_connections]
+        activation_function = self.activation_function
+        semantics = None
+        return Neuron(semantics, input_connections, activation_function)
 
     def _calculate_weighted_input(self):
         """Calculates weighted input from input connections."""
