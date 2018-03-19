@@ -23,11 +23,9 @@ def _resample_data_set(data_set, train_frac=None, valid_frac=None, test_frac=Non
 
     return train_data, validation_data, test_data
 
-
 def _resample_data_set_iter(data_set, train_frac=None, valid_frac=None, test_frac=None, iterations=30):
     """"""
     return list(_resample_data_set(data_set, train_frac, valid_frac, test_frac) for i in range(iterations))
-
 
 def _to_pickle_sample(data_samples, data_set_name, index):
 
@@ -37,11 +35,9 @@ def _to_pickle_sample(data_samples, data_set_name, index):
 
     [data_set_to_pickle(data_sample, file_path, file_name) for data_sample, file_name in zip(data_samples, file_names)]
 
-
 def _to_pickle(data_samples_list, data_set_name):
     [_to_pickle_sample(data_samples, data_set_name, index) for data_samples, index
      in zip(data_samples_list, range(len(data_samples_list)))]
-
 
 def process_all_data_sets():
     """"""

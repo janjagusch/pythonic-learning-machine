@@ -18,7 +18,6 @@ def read_raw_data_set(data_set_name):
 
 def read_cleaned_data_set(data_set_name):
     """Reads 02_cleaned data_sets set from data_sets/02_cleaned/'data_set_name'."""
-    # TODO convert 02_cleaned data sets to serialized pickle.
     file_path = join(_get_path_to_data_dir(), "02_cleaned")
     file_name = data_set_name + '.csv'
     return read_csv(join(file_path, file_name), header=None)

@@ -1,3 +1,15 @@
+# .pkl compressed files.
+*.pkl
+
+# files in /02_cleaned
+data_sets/02_cleaned/*
+
+# files in /03_standardized
+data_sets/03_standardized/*
+
+# files in /04_resampled
+data_sets/04_resampled/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
