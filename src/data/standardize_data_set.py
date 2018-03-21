@@ -5,11 +5,18 @@ from data.data_set import get_target_variable
 def _standardize_data_set(data_set):
     """"""
     data_set_ext = _remove_unary_features(data_set)
-    data_set_ext = _categorize_target_variable(data_set_ext)
-    for c in data_set_ext:
-        if not data_set_ext[c].dtype.name == 'category':
-            data_set_ext[c] = (data_set_ext[c] - data_set_ext[c].mean()) / data_set_ext[c].std()
+    cols = data_set_ext.columns
+    if _is_classification(data_set_ext):
+        data_set_ext[cols[-1]] = data_set_ext[cols[-1]].astype(float)
+        cols = cols[:-1]
+    for c in cols:
+        data_set_ext[c] = (data_set_ext[c] - data_set_ext[c].mean()) / data_set_ext[c].std()
     return data_set_ext
+
+def _is_classification(data_set):
+    target = data_set[data_set.columns[len(data_set.columns) - 1]]
+    return all(map(lambda x: x in (0, 1), target))
+
 
 def _categorize_target_variable(data_set):
     data_set_ext = data_set.copy()

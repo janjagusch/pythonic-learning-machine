@@ -1,9 +1,9 @@
 from src.data.io_data_set import load_samples
-from algorithms.semantic_learning_machine.semantic_learning_machine import SemanticLearningMachine
-from algorithms.neat_python.neat_python import Neat
-from benchmark_experiments.parameter_tuner import SLM_FLS_CONFIGURATIONS, NEAT_CONFIGURATIONS, SGA_CONFIGURATIONS, SVR_CONFIGURATIONS, \
+from algorithm.semantic_learning_machine.algorithm import SemanticLearningMachine
+from algorithm.neat_python.algorithm import Neat
+from benchmark.configuration import SLM_FLS_CONFIGURATIONS, NEAT_CONFIGURATIONS, SGA_CONFIGURATIONS, SVR_CONFIGURATIONS, \
     MLP_CONFIGURATIONS
-from algorithms.simple_genetic_algorithm.algorithm import SimpleGeneticAlgorithm
+from algorithm.simple_genetic_algorithm.algorithm import SimpleGeneticAlgorithm
 from sklearn.svm import SVR
 from sklearn.neural_network import MLPRegressor
 from data.data_set import get_target_variable, get_input_variables

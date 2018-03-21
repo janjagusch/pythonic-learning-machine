@@ -48,4 +48,4 @@ def process_all_data_sets():
           [read_standardized_data_set(data_set_name) for data_set_name in data_set_names]],
          data_set_names)]
 
-process_all_data_sets()
+# process_all_data_sets()
