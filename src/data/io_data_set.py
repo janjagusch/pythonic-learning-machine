@@ -1,7 +1,7 @@
 from os.path import join, dirname, exists
 from os import pardir, makedirs, listdir
 from pandas import read_csv, read_pickle
-from src.utils.environment_constants import SAMPLE_LABELS
+from utils.environment_constants import SAMPLE_LABELS
 
 
 def _get_path_to_data_dir():

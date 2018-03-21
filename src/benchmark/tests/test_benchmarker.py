@@ -7,6 +7,7 @@ class TestAlgorithm(unittest.TestCase):
         self.benchmarker = Benchmarker('r_concrete')
 
     def test_run(self):
+        pass
         self.benchmarker.run()
 
 if __name__ == '__main__':

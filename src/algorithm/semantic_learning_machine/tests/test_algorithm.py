@@ -1,7 +1,7 @@
 from data.io_data_set import load_samples
 from data.data_set import get_input_variables, get_target_variable
 from algorithm.semantic_learning_machine.algorithm import SemanticLearningMachine
-from algorithm.semantic_learning_machine.mutation_operators import Mutation2
+from algorithm.semantic_learning_machine.mutation_operator import Mutation2
 from algorithm.common.stopping_criterion import MaxGenerationsCriterion, ErrorDeviationVariationCriterion
 from algorithm.common.metric import RootMeanSquaredError, Accuracy
 import unittest
