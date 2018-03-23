@@ -2,7 +2,7 @@ from algorithm.common.neural_network.node import Sensor
 from algorithm.common.neural_network.neural_network import NeuralNetwork, create_neuron
 from algorithm.common.neural_network.connection import Connection
 from algorithm.semantic_learning_machine.solution import Solution
-from algorithm.algorithm import EvolutionaryAlgorithm
+from algorithm.common.algorithm import EvolutionaryAlgorithm
 from numpy import array, matrix, dot, resize, shape
 from numpy.linalg import pinv
 from random import uniform, sample, randint

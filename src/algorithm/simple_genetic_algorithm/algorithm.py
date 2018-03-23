@@ -2,7 +2,7 @@ from copy import deepcopy
 from numpy.random import uniform
 from algorithm.simple_genetic_algorithm.solution import Solution
 from algorithm.common.neural_network.neural_network import NeuralNetwork
-from algorithm.algorithm import EvolutionaryAlgorithm
+from algorithm.common.algorithm import EvolutionaryAlgorithm
 
 class SimpleGeneticAlgorithm(EvolutionaryAlgorithm):
     """Class represents simple genetic algorithm.

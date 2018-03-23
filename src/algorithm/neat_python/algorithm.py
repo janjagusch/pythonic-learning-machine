@@ -1,4 +1,4 @@
-from algorithm.algorithm import EvolutionaryAlgorithm
+from algorithm.common.algorithm import EvolutionaryAlgorithm
 from numpy import array, append
 from algorithm.neat_python.create_configuration import create_configuration, write_configuration, get_configuration_path, remove_configuration
 from neat import Config, DefaultGenome, DefaultReproduction, DefaultSpeciesSet, DefaultStagnation, Population
