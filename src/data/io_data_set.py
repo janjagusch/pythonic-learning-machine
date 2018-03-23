@@ -2,6 +2,7 @@ from os.path import join, dirname, exists
 from os import pardir, makedirs, listdir
 from pandas import read_csv, read_pickle
 from utils.environment_constants import SAMPLE_LABELS
+from pickle import dump, load
 
 
 def _get_path_to_data_dir():
@@ -37,6 +38,28 @@ def list_files(dir):
 
 def remove_extension(file):
     return file.split('.')[0]
+
+
+def benchmark_to_pickle(benchmark):
+    # Appends path to data folder to file path.
+    file_path_ext = join(_get_path_to_data_dir(), '05_benchmark', benchmark.data_set_name)
+
+    # If 'file_path_ext' does not exist, create 'file_path_ext'.
+    if not exists(file_path_ext):
+        makedirs(file_path_ext)
+
+    file_name_ext = benchmark.file_name + '.pkl'
+
+    with open(join(file_path_ext, file_name_ext), 'wb') as f:
+        dump(benchmark, f)
+
+
+def benchmark_from_pickle(data_set_name, file_name):
+    file_path_ext = join(_get_path_to_data_dir(), '05_benchmark', data_set_name, file_name)
+
+    if exists(file_path_ext):
+        with open(file_path_ext, 'rb') as f:
+            return load(f)
 
 
 def data_set_to_pickle(data_set, file_path, file_name):

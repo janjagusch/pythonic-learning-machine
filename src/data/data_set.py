@@ -8,4 +8,6 @@ def get_target_variable(data_set):
     return data_set[data_set.columns[len(data_set.columns) - 1]]
 
 def is_classification(data_set):
-    return get_target_variable(data_set).dtype.name == 'category'
+    target = data_set[data_set.columns[len(data_set.columns) - 1]]
+    return all(map(lambda x: x in (0, 1), target))
+
