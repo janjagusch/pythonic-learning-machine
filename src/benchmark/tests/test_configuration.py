@@ -1,5 +1,5 @@
 from benchmark.configuration import ENSEMBLE_CONFIGURATIONS
-from data.io_data_set import load_samples
+from data.io import load_samples
 import unittest
 
 class TestAlgorithm(unittest.TestCase):

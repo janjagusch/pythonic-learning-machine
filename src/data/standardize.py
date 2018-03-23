@@ -1,6 +1,6 @@
-from src.data.io_data_set import read_cleaned_data_set, data_set_to_pickle, remove_extension, list_files
+from src.data.io import read_cleaned_data_set, data_set_to_pickle, remove_extension, list_files
 from os.path import join
-from data.data_set import is_classification
+from data.extract import is_classification
 
 def _standardize_data_set(data_set):
     """"""

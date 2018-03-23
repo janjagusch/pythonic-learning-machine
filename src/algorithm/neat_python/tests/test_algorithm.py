@@ -1,5 +1,5 @@
-from data.io_data_set import load_samples
-from data.data_set import get_input_variables, get_target_variable
+from data.io import load_samples
+from data.extract import get_input_variables, get_target_variable
 from algorithm.neat_python.algorithm import Neat
 from algorithm.common.metric import RootMeanSquaredError, Accuracy
 from algorithm.common.stopping_criterion import MaxGenerationsCriterion

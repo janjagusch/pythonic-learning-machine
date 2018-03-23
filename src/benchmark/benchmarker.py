@@ -4,8 +4,8 @@ from benchmark.configuration import SLM_FLS_CONFIGURATIONS, SLM_OLS_CONFIGURATIO
     NEAT_CONFIGURATIONS, SGA_CONFIGURATIONS, SVC_CONFIGURATIONS, SVR_CONFIGURATIONS, MLP_CONFIGURATIONS, \
     RF_CONFIGURATIONS, ENSEMBLE_CONFIGURATIONS
 from algorithm.common.metric import RootMeanSquaredError
-from data.data_set import is_classification
-from data.io_data_set import load_samples, benchmark_to_pickle, benchmark_from_pickle
+from data.extract import is_classification
+from data.io import load_samples, benchmark_to_pickle, benchmark_from_pickle
 from tqdm import tqdm
 import datetime
 

@@ -3,7 +3,7 @@ from benchmark.evaluator import EvaluatorSLM, EvaluatorNEAT, EvaluatorSGA, Evalu
     EvaluatorSVR, EvaluatorMLPC, EvaluatorMLPR, EvaluatorRFC, EvaluatorRFR
 from benchmark.configuration import SLM_OLS_CONFIGURATIONS, NEAT_CONFIGURATIONS, SGA_CONFIGURATIONS, SVC_CONFIGURATIONS, \
     SVR_CONFIGURATIONS, MLP_CONFIGURATIONS, RF_CONFIGURATIONS
-from data.io_data_set import load_samples
+from data.io import load_samples
 import unittest
 
 class TestAlgorithm(unittest.TestCase):

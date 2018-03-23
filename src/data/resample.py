@@ -1,4 +1,4 @@
-from src.data.io_data_set import remove_extension, list_files, read_standardized_data_set, data_set_to_pickle
+from src.data.io import remove_extension, list_files, read_standardized_data_set, data_set_to_pickle
 from os.path import join
 
 

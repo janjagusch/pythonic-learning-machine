@@ -1,5 +1,5 @@
 from random import shuffle
-from data.data_set import get_input_variables, get_target_variable
+from data.extract import get_input_variables, get_target_variable
 from algorithm.common.metric import is_better
 from timeit import default_timer
 from benchmark.algorithm import BenchmarkSLM, BenchmarkNEAT, BenchmarkSGA

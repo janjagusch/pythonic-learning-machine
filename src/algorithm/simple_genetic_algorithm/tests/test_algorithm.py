@@ -1,5 +1,5 @@
-from data.io_data_set import load_samples
-from data.data_set import get_input_variables, get_target_variable
+from data.io import load_samples
+from data.extract import get_input_variables, get_target_variable
 from algorithm.simple_genetic_algorithm.algorithm import SimpleGeneticAlgorithm
 from algorithm.common.neural_network.neural_network import create_network_from_topology
 from algorithm.common.stopping_criterion import MaxGenerationsCriterion
