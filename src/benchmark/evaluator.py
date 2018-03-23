@@ -5,6 +5,10 @@ from timeit import default_timer
 from benchmark.algorithm import BenchmarkSLM, BenchmarkNEAT, BenchmarkSGA
 from neat.nn import FeedForwardNetwork
 from numpy import append, array
+from sklearn.svm import SVC, SVR
+from sklearn.neural_network import MLPClassifier, MLPRegressor
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from algorithm.common.ensemble import Ensemble
 
 TIME_LIMIT_SECONDS = 30
 TIME_BUFFER = 0.1
@@ -47,7 +51,11 @@ class Evaluator(object):
             # Create learner from configuration.
             learner = self.model(**configuration)
             # Train learner.
-            learner.fit(get_input_variables(self.training_set).as_matrix(), get_target_variable(self.training_set).as_matrix(),
+            if self.__class__.__bases__[0] == EvaluatorSklearn:
+                learner.fit(get_input_variables(self.training_set).as_matrix(),
+                            get_target_variable(self.training_set).as_matrix())
+            else:
+                learner.fit(get_input_variables(self.training_set).as_matrix(), get_target_variable(self.training_set).as_matrix(),
                         self.metric, verbose)
             # Calculate validation value.
             validation_value = self._calculate_value(learner, self.validation_set)
@@ -177,3 +185,50 @@ class EvaluatorSGA(EvaluatorSLM):
 
     def __init__(self, configurations, training_set, validation_set, testing_set, metric):
         Evaluator.__init__(self, BenchmarkSGA, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorSklearn(Evaluator):
+
+    def _get_learner_meta(self, learner):
+        learner_meta = super()._get_learner_meta(learner)
+        learner_meta['training_value'] = self._calculate_value(learner, self.training_set)
+        return learner_meta
+
+class EvaluatorSVC(EvaluatorSklearn):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(SVC, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorSVR(EvaluatorSklearn):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(SVR, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorMLPC(EvaluatorSklearn):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(MLPClassifier, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorMLPR(EvaluatorSklearn):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(MLPRegressor, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorRFC(EvaluatorSklearn):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(RandomForestClassifier, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorRFR(EvaluatorSklearn):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(RandomForestRegressor, configurations, training_set, validation_set, testing_set, metric)
+
+class EvaluatorEnsemble(Evaluator):
+
+    def __init__(self, configurations, training_set, validation_set, testing_set, metric):
+        super().__init__(Ensemble, configurations, training_set, validation_set, testing_set, metric)
+
+    def _get_learner_meta(self, learner):
+        learner_meta = super()._get_learner_meta(learner)
+        learner_meta['training_value'] = self._calculate_value(learner, self.training_set)
+        return learner_meta

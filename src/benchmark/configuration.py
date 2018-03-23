@@ -4,7 +4,9 @@ from algorithm.semantic_learning_machine.mutation_operator import Mutation2
 from algorithm.simple_genetic_algorithm.selection_operator import SelectionOperatorTournament
 from algorithm.simple_genetic_algorithm.mutation_operator import MutationOperatorGaussian
 from algorithm.simple_genetic_algorithm.crossover_operator import CrossoverOperatorArithmetic
+from algorithm.semantic_learning_machine.algorithm import SemanticLearningMachine
 from itertools import product
+from numpy import mean
 
 
 _BASE_PARAMETERS = {
@@ -62,6 +64,7 @@ _SVM_PARAMETERS = {
     'degree': [d for d in range(1, 5)],
     'gamma': [g / 10 for g in range(1, 6)],
     'coef0': [co / 10 for co in range(1, 11)],
+    'probability': [True]
 }
 
 _MLP_PARAMETERS = {
@@ -71,9 +74,18 @@ _MLP_PARAMETERS = {
     'learning_rate_init': [10 ** -x for x in range(1, 7)]
 }
 
+_RF_PARAMETERS = {
+    'n_estimators': [10],
+    'max_depth': [1, 2, 5, None],
+    'min_samples_split': [0.01, 0.02, 0.05]
+}
+
+def _create_base_learner(algorithm, configurations):
+    return [algorithm(**configuration) for configuration in configurations]
+
 def _create_svc_configuration_list(list_dict):
     configuration_list = list()
-    for kernel in _SVM_PARAMETERS.get('kernel'):
+    for kernel in list_dict.get('kernel'):
         if kernel == 'linear':
             keys = []
         if kernel == 'poly':
@@ -83,14 +95,15 @@ def _create_svc_configuration_list(list_dict):
         if kernel == 'sigmoid':
             keys = ['gamma', 'coef0']
         keys.append('C')
-        sub_dict = {k: _SVM_PARAMETERS[k] for k in keys if k in _SVM_PARAMETERS}
+        keys.append('probability')
+        sub_dict = {k: list_dict[k] for k in keys if k in list_dict}
         sub_dict['kernel'] = [kernel]
         configuration_list.extend(_create_configuration_list(sub_dict))
     return configuration_list
 
 def _create_svr_configuration_list(list_dict):
     configuration_list = list()
-    for kernel in _SVM_PARAMETERS.get('kernel'):
+    for kernel in list_dict.get('kernel'):
         if kernel == 'linear':
             keys = []
         if kernel == 'poly':
@@ -101,7 +114,7 @@ def _create_svr_configuration_list(list_dict):
             keys = ['gamma', 'coef0']
         keys.append('C')
         keys.append('epsilon')
-        sub_dict = {k: _SVM_PARAMETERS[k] for k in keys if k in _SVM_PARAMETERS}
+        sub_dict = {k: list_dict[k] for k in keys if k in list_dict}
         sub_dict['kernel'] = [kernel]
         configuration_list.extend(_create_configuration_list(sub_dict))
     return configuration_list
@@ -117,4 +130,12 @@ SGA_CONFIGURATIONS = _create_configuration_list(_SGA_PARAMETERS)
 SVC_CONFIGURATIONS = _create_svc_configuration_list(_SVM_PARAMETERS)
 SVR_CONFIGURATIONS = _create_svr_configuration_list(_SVM_PARAMETERS)
 MLP_CONFIGURATIONS = _create_configuration_list(_MLP_PARAMETERS)
+RF_CONFIGURATIONS = _create_configuration_list(_RF_PARAMETERS)
 
+_ENSEMBLE_PARAMETERS = {
+    'base_learner': _create_base_learner(SemanticLearningMachine, SLM_OLS_CONFIGURATIONS),
+    'number_learners': [10],
+    'meta_learner': [mean]
+}
+
+ENSEMBLE_CONFIGURATIONS = _create_configuration_list(_ENSEMBLE_PARAMETERS)
