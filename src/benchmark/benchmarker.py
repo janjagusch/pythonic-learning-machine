@@ -3,77 +3,75 @@ from benchmark.evaluator import EvaluatorSLM, EvaluatorNEAT, EvaluatorSGA, \
 from benchmark.configuration import SLM_FLS_CONFIGURATIONS, SLM_OLS_CONFIGURATIONS, \
     NEAT_CONFIGURATIONS, SGA_CONFIGURATIONS, SVC_CONFIGURATIONS, SVR_CONFIGURATIONS, MLP_CONFIGURATIONS, \
     RF_CONFIGURATIONS, ENSEMBLE_CONFIGURATIONS
-from algorithm.common.metric import RootMeanSquaredError
+from benchmark.formatter import _format_static_table
+from algorithms.common.metric import RootMeanSquaredError
 from data.extract import is_classification
 from data.io import load_samples, benchmark_to_pickle, benchmark_from_pickle
 from tqdm import tqdm
 import datetime
 
+# Disable the monitor thread. (https://github.com/tqdm/tqdm/issues/481)
+tqdm.monitor_interval = 0
 
 # Returns the current date and time.
 _now = datetime.datetime.now()
 
 # Default models to be compared.
 _MODELS = {
-    'slm_fls': {
-        'name_long': 'Semantic Learning Machine (Fixed Learning Step)',
-        'name_short': 'SLM (FLS)',
-        'algorithm': EvaluatorSLM,
-        'configurations': SLM_FLS_CONFIGURATIONS},
     'slm_ols': {
         'name_long': 'Semantic Learning Machine (Optimized Learning Step)',
         'name_short': 'SLM (OLS)',
-        'algorithm': EvaluatorSLM,
+        'algorithms': EvaluatorSLM,
         'configurations': SLM_OLS_CONFIGURATIONS},
     'neat': {
         'name_long': 'Neuroevolution of Augmenting Topologies',
         'name_short': 'NEAT',
-        'algorithm': EvaluatorNEAT,
+        'algorithms': EvaluatorNEAT,
         'configurations': NEAT_CONFIGURATIONS},
     'sga': {
         'name_long': 'Simple Genetic Algorithm',
         'name_short': 'SGA',
-        'algorithm': EvaluatorSGA,
+        'algorithms': EvaluatorSGA,
         'configurations': SGA_CONFIGURATIONS},
     'svc': {
         'name_long': 'Support Vector Machine',
         'name_short': 'SVM',
-        'algorithm': EvaluatorSVC,
+        'algorithms': EvaluatorSVC,
         'configurations': SVC_CONFIGURATIONS},
     'svr': {
         'name_long': 'Support Vector Machine',
         'name_short': 'SVM',
-        'algorithm': EvaluatorSVR,
+        'algorithms': EvaluatorSVR,
         'configurations': SVR_CONFIGURATIONS},
     'mlpc': {
         'name_long': 'Multilayer Perceptron',
         'name_short': 'MLP',
-        'algorithm': EvaluatorMLPC,
+        'algorithms': EvaluatorMLPC,
         'configurations': MLP_CONFIGURATIONS},
     'mlpr': {
         'name_long': 'Multilayer Perceptron',
         'name_short': 'MLP',
-        'algorithm': EvaluatorMLPR,
+        'algorithms': EvaluatorMLPR,
         'configurations': MLP_CONFIGURATIONS},
     'slm_ensemble': {
         'name_long': 'Semantic Learning Machine Ensemble',
         'name_short': 'SLM (Ensemble)',
-        'algorithm': EvaluatorEnsemble,
+        'algorithms': EvaluatorEnsemble,
         'configurations': ENSEMBLE_CONFIGURATIONS},
     'rfc': {
         'name_long': 'Random Forest',
         'name_short': 'RF',
-        'algorithm': EvaluatorRFC,
+        'algorithms': EvaluatorRFC,
         'configurations': RF_CONFIGURATIONS},
     'rfr': {
         'name_long': 'Random Forest',
         'name_short': 'RF',
-        'algorithm': EvaluatorRFR,
+        'algorithms': EvaluatorRFR,
         'configurations': RF_CONFIGURATIONS}
 }
 
 
-class Benchmarker(object):
+class Benchmarker():
     """
     Class represents benchmark environment to compare different algorithms in various parameter configurations
     on a given data set and a defined performed metric.
@@ -98,9 +96,9 @@ class Benchmarker(object):
         if is_classification(self.samples[0][0]):
             if 'svr' in self.models.keys():
                 del self.models['svr']
-            if 'mlpr' in self.models['mlpr']:
+            if 'mlpr' in self.models.keys():
                 del self.models['mlpr']
-            if 'rfr' in self.models['rfr']:
+            if 'rfr' in self.models.keys():
                 del self.models['rfr']
         else:
             if 'svc' in self.models.keys():
@@ -115,13 +113,13 @@ class Benchmarker(object):
         benchmark_to_pickle(self)
 
     def _evaluate_algorithm(self, algorithm, configurations, training_set, validation_set, testing_set, metric):
-        """Creates evaluator, based on algorithm and configurations."""
+        """Creates evaluator, based on algorithms and configurations."""
 
         evaluator = algorithm(configurations, training_set, validation_set, testing_set, metric)
         return evaluator.run()
 
     def run(self):
-        """Runs benchmark study, where it evaluates every algorithm on every sample set."""
+        """Runs benchmark study, where it evaluates every algorithms on every sample set."""
 
         i = 0
         for training, validation, testing in tqdm(self.samples):
@@ -129,11 +127,15 @@ class Benchmarker(object):
                 # If evaluation for key, iteration pair already exists, skip this pair.
                 if not self.results[key][i]:
                     self.results[key][i] = self._evaluate_algorithm(
-                        algorithm=value['algorithm'], configurations=value['configurations'], training_set=training,
+                        algorithm=value['algorithms'], configurations=value['configurations'], training_set=training,
                         validation_set=validation, testing_set=testing, metric=self.metric)
                     # Serialize benchmark.
                     benchmark_to_pickle(self)
             i += 1
+
+    def _format_tables(self):
+        pass
+
 
 
 def continue_benchmark(data_set_name, file_name):

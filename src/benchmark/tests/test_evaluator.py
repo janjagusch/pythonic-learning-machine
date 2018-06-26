@@ -1,4 +1,4 @@
-from algorithm.common.metric import RootMeanSquaredError
+from algorithms.common.metric import RootMeanSquaredError
 from benchmark.evaluator import EvaluatorSLM, EvaluatorNEAT, EvaluatorSGA, EvaluatorSVC, \
     EvaluatorSVR, EvaluatorMLPC, EvaluatorMLPR, EvaluatorRFC, EvaluatorRFR
 from benchmark.configuration import SLM_OLS_CONFIGURATIONS, NEAT_CONFIGURATIONS, SGA_CONFIGURATIONS, SVC_CONFIGURATIONS, \

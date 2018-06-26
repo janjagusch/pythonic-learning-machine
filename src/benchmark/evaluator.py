@@ -1,6 +1,6 @@
 from random import shuffle
 from data.extract import get_input_variables, get_target_variable
-from algorithm.common.metric import is_better
+from algorithms.common.metric import is_better
 from timeit import default_timer
 from benchmark.algorithm import BenchmarkSLM, BenchmarkNEAT, BenchmarkSGA
 from neat.nn import FeedForwardNetwork
@@ -8,9 +8,15 @@ from numpy import append, array
 from sklearn.svm import SVC, SVR
 from sklearn.neural_network import MLPClassifier, MLPRegressor
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from algorithm.common.ensemble import Ensemble
+from algorithms.common.ensemble import Ensemble
+from tqdm import tqdm
+import warnings
 
-TIME_LIMIT_SECONDS = 30
+
+# Disable the monitor thread. (https://github.com/tqdm/tqdm/issues/481)
+tqdm.monitor_interval = 0
+
+TIME_LIMIT_SECONDS = 300
 TIME_BUFFER = 0.1
 
 class Evaluator(object):
@@ -47,7 +53,7 @@ class Evaluator(object):
         # Time left.
         time_left = lambda: time_limit - (time_seconds() - run_start)
         # Iterate though all configurations.
-        for configuration in self.configurations:
+        for configuration in tqdm(self.configurations):
             # Create learner from configuration.
             learner = self.model(**configuration)
             # Train learner.
@@ -208,10 +214,20 @@ class EvaluatorMLPC(EvaluatorSklearn):
     def __init__(self, configurations, training_set, validation_set, testing_set, metric):
         super().__init__(MLPClassifier, configurations, training_set, validation_set, testing_set, metric)
 
+    def _select_best_learner(self, time_limit=TIME_LIMIT_SECONDS, time_buffer=TIME_BUFFER, verbose=False):
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore")
+            return super()._select_best_learner(time_limit, time_buffer, verbose)
+
 class EvaluatorMLPR(EvaluatorSklearn):
 
     def __init__(self, configurations, training_set, validation_set, testing_set, metric):
         super().__init__(MLPRegressor, configurations, training_set, validation_set, testing_set, metric)
+
+    def _select_best_learner(self, time_limit=TIME_LIMIT_SECONDS, time_buffer=TIME_BUFFER, verbose=False):
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore")
+            return super()._select_best_learner(time_limit, time_buffer, verbose)
 
 class EvaluatorRFC(EvaluatorSklearn):
 

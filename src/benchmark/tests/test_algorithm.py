@@ -1,13 +1,13 @@
 from data.io import load_samples
 from data.extract import get_input_variables, get_target_variable
 from benchmark.algorithm import BenchmarkSLM, BenchmarkNEAT, BenchmarkSGA
-from algorithm.semantic_learning_machine.mutation_operator import Mutation2
-from algorithm.common.stopping_criterion import MaxGenerationsCriterion
-from algorithm.common.metric import RootMeanSquaredError, Accuracy
-from algorithm.common.neural_network.neural_network import create_network_from_topology
-from algorithm.simple_genetic_algorithm.crossover_operator import CrossoverOperatorArithmetic
-from algorithm.simple_genetic_algorithm.mutation_operator import MutationOperatorGaussian
-from algorithm.simple_genetic_algorithm.selection_operator import SelectionOperatorTournament
+from algorithms.semantic_learning_machine.mutation_operator import Mutation2
+from algorithms.common.stopping_criterion import MaxGenerationsCriterion
+from algorithms.common.metric import RootMeanSquaredError, Accuracy
+from algorithms.common.neural_network.neural_network import create_network_from_topology
+from algorithms.simple_genetic_algorithm.crossover_operator import CrossoverOperatorArithmetic
+from algorithms.simple_genetic_algorithm.mutation_operator import MutationOperatorGaussian
+from algorithms.simple_genetic_algorithm.selection_operator import SelectionOperatorTournament
 import unittest
 
 

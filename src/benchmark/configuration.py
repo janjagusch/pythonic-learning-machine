@@ -1,17 +1,17 @@
-from algorithm.common.stopping_criterion import MaxGenerationsCriterion, ErrorDeviationVariationCriterion
-from algorithm.common.neural_network.neural_network import create_network_from_topology
-from algorithm.semantic_learning_machine.mutation_operator import Mutation2
-from algorithm.simple_genetic_algorithm.selection_operator import SelectionOperatorTournament
-from algorithm.simple_genetic_algorithm.mutation_operator import MutationOperatorGaussian
-from algorithm.simple_genetic_algorithm.crossover_operator import CrossoverOperatorArithmetic
-from algorithm.semantic_learning_machine.algorithm import SemanticLearningMachine
+from algorithms.common.stopping_criterion import MaxGenerationsCriterion, ErrorDeviationVariationCriterion
+from algorithms.common.neural_network.neural_network import create_network_from_topology
+from algorithms.semantic_learning_machine.mutation_operator import Mutation2, Mutation3, Mutation4
+from algorithms.simple_genetic_algorithm.selection_operator import SelectionOperatorTournament
+from algorithms.simple_genetic_algorithm.mutation_operator import MutationOperatorGaussian
+from algorithms.simple_genetic_algorithm.crossover_operator import CrossoverOperatorArithmetic
+from algorithms.semantic_learning_machine.algorithm import SemanticLearningMachine
 from itertools import product
 from numpy import mean
 
 
 _BASE_PARAMETERS = {
-    'number_generations': 100,
-    'population_size': 50
+    'number_generations': 200,
+    'population_size': 100
 }
 
 _SLM_FLS_PARAMETERS = {
@@ -24,11 +24,11 @@ _SLM_FLS_PARAMETERS = {
 }
 
 _SLM_OLS_PARAMETERS = {
-    'stopping_criterion': [ErrorDeviationVariationCriterion(0.25)],
+    'stopping_criterion': [ErrorDeviationVariationCriterion(0.25), ErrorDeviationVariationCriterion(0.5)],
     'population_size': [_BASE_PARAMETERS.get('population_size')],
-    'layers': [1, 2, 3],
+    'layers': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     'learning_step': ['optimized'],
-    'max_connections': [1, 10, 50],
+    'max_connections': [1, 10, 50, 100],
     'mutation_operator': [Mutation2()]
 }
 
@@ -38,9 +38,9 @@ _NEAT_PARAMETERS = {
     'compatibility_threshold': [3, 4],
     'compatibility_disjoint_coefficient': [1],
     'compatibility_weight_coefficient': [1],
-    'conn_add_prob': [0.1],
+    'conn_add_prob': [0.1, 0.25],
     'conn_delete_prob': [0.1],
-    'node_add_prob': [0.1],
+    'node_add_prob': [0.1, 0.25],
     'node_delete_prob': [0.1],
     'weight_mutate_rate': [0.25],
     'weight_mutate_power': [0.25]
@@ -53,17 +53,17 @@ _SGA_PARAMETERS = {
     'selection_operator': [SelectionOperatorTournament(5)],
     'mutation_operator': [MutationOperatorGaussian(0.01), MutationOperatorGaussian(0.1)],
     'crossover_operator': [CrossoverOperatorArithmetic()],
-    'mutation_rate': [0.25, 0.5, 1],
-    'crossover_rate': [0.01, 0.1, 0.25]
+    'mutation_rate': [0.25, 0.5],
+    'crossover_rate': [0.01, 0.1]
 }
 
 _SVM_PARAMETERS = {
     'C': [c / 10 for c in range(1, 11)],
     'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-    'epsilon': [e / 10 for e in range(1, 11)],
+    'epsilon': [e / 10 for e in range(1, 6)],
     'degree': [d for d in range(1, 5)],
     'gamma': [g / 10 for g in range(1, 6)],
-    'coef0': [co / 10 for co in range(1, 11)],
+    'coef0': [co / 10 for co in range(1, 6)],
     'probability': [True]
 }
 
@@ -75,7 +75,7 @@ _MLP_PARAMETERS = {
 }
 
 _RF_PARAMETERS = {
-    'n_estimators': [10],
+    'n_estimators': [25],
     'max_depth': [1, 2, 5, None],
     'min_samples_split': [0.01, 0.02, 0.05]
 }
@@ -134,7 +134,7 @@ RF_CONFIGURATIONS = _create_configuration_list(_RF_PARAMETERS)
 
 _ENSEMBLE_PARAMETERS = {
     'base_learner': _create_base_learner(SemanticLearningMachine, SLM_OLS_CONFIGURATIONS),
-    'number_learners': [10],
+    'number_learners': [25],
     'meta_learner': [mean]
 }
 

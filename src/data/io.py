@@ -78,14 +78,20 @@ def data_set_to_pickle(data_set, file_path, file_name):
     data_set.to_pickle(path=join(file_path_ext, file_name_ext))
 
 
-def data_set_from_pickle(file_path, file_name):
-    """"""
+def read_pickle(file_path):
 
-    file_path_ext = join(_get_path_to_data_dir(), file_path)
+    with open(file_path, 'rb') as p:
+        return load(p)
 
-    file_name_ext = file_name + '.pkl'
 
-    return read_pickle(join(file_path_ext, file_name_ext))
+# def data_set_from_pickle(file_path, file_name):
+#     """"""
+#
+#     file_path_ext = join(_get_path_to_data_dir(), file_path)
+#
+#     file_name_ext = file_name
+#
+#     return read_pickle(join(file_path_ext, file_name_ext))
 
 
 def load_samples(data_set_name, index):
@@ -94,6 +100,10 @@ def load_samples(data_set_name, index):
     file_names = [sample_label + "_" + str(index) for sample_label in SAMPLE_LABELS]
 
     return [data_set_from_pickle(file_path, file_name) for file_name in file_names]
+
+
+def get_benchmark_folder():
+    return join(_get_path_to_data_dir(), '05_benchmark')
 
 
 

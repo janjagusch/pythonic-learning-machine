@@ -2,6 +2,12 @@ from src.data.io import read_cleaned_data_set, data_set_to_pickle, remove_extens
 from os.path import join
 from data.extract import is_classification
 
+data_set_names = [
+    'beauty_5'
+]
+
+
+
 def _standardize_data_set(data_set):
     """"""
     data_set_ext = _remove_unary_features(data_set)

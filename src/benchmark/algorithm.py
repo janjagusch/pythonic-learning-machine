@@ -1,6 +1,6 @@
-from algorithm.semantic_learning_machine.algorithm import SemanticLearningMachine
-from algorithm.neat_python.algorithm import Neat
-from algorithm.simple_genetic_algorithm.algorithm import SimpleGeneticAlgorithm
+from algorithms.semantic_learning_machine.algorithm import SemanticLearningMachine
+from algorithms.neat_python.algorithm import Neat
+from algorithms.simple_genetic_algorithm.algorithm import SimpleGeneticAlgorithm
 from timeit import default_timer
 
 _time_seconds = lambda: default_timer()
