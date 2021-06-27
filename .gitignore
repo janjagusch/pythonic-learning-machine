@@ -1,91 +1,91 @@
 # .pkl compressed files.
-*.pkl
+#*.pkl
 
 # files in /02_cleaned
-data_sets/02_cleaned/*
+#data_sets/02_cleaned/*
 
 # files in /03_standardized
-data_sets/03_standardized/*
+#data_sets/03_standardized/*
 
 # files in /04_resampled
-data_sets/04_resampled/*
+#data_sets/04_resampled/*
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
+#__pycache__/
+#*.py[cod]
 
 # C extensions
-*.so
+#*.so
 
 # Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+#.Python
+#env/
+#build/
+#develop-eggs/
+#dist/
+#downloads/
+#eggs/
+#.eggs/
+#lib/
+#lib64/
+#parts/
+#sdist/
+#var/
+#*.egg-info/
+#.installed.cfg
+#*.egg
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+#*.manifest
+#*.spec
 
 # Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+#pip-log.txt
+#pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
+#htmlcov/
+#.tox/
+#.coverage
+#.coverage.*
+#.cache
+#nosetests.xml
+#coverage.xml
+#*,cover
 
 # Translations
-*.mo
-*.pot
+#*.mo
+#*.pot
 
 # Django stuff:
-*.log
+#*.log
 
 # Sphinx documentation
-docs/_build/
+#docs/_build/
 
 # PyBuilder
-target/
+#target/
 
 # DotEnv configuration
-.env
+#.env
 
 # Database
-*.db
-*.rdb
+#*.db
+#*.rdb
 
 # Pycharm
-.idea
+#.idea
 
 # VS Code
-.vscode/
+#.vscode/
 
 # Spyder
-.spyproject/
+#.spyproject/
 
 # Jupyter NB Checkpoints
-.ipynb_checkpoints/
+#.ipynb_checkpoints/
 
 # exclude data from source control by default
-/data/
+#/data/
